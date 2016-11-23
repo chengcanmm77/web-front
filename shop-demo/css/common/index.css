@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,pre,a,code,del,em,img,strong,sub,sup,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+input:focus {
+	outline: none
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+th,td {
+	vertical-align: middle;
+}
+
+.fl,.Left {
+	float: left;
+}
+
+.fr,.Right {
+	float: right;
+}
+
+.r {
+	text-align: right!important;
+}
+
+.c {
+	text-align: center!important;
+}
+
+.l {
+	text-align: left!important;
+}
+
+a {
+	text-decoration: none;
+	color: #333333;
+	font-family: Microsoft YaHei,Arial;
+	_font-family: Microsoft YaHei,宋体,Arial;
+}
+
+a:hover {
+	color: #cf000e;
+}
+
+a:hover img {
+	text-decoration: none;
+}
+
+.none {
+	display: none;
+}
+
+.clearfix:after {
+	content: '.';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clear {
+	clear: both
+}
+
+.w {
+	width: 1190px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img {
+	overflow: hidden;
+	vertical-align: top;
+	background: #eee;
+}
+
+.red,a.red {
+	color: #cf000e !important;
+}
+
+.gray,a.gray {
+	color: #999;
+}
+
+.orange,a.orange {
+	color: #f60;
+}
+
+.black,a.black {
+	color: #333;
+}
+
+.white,a.white {
+	color: #fff;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.root-body .w {
+	width: 1460px;
+}
+
+body {
+	margin: 0px auto;
+	font-family: Microsoft YaHei,Arial;
+	_font-family: Microsoft YaHei,宋体,Arial;
+	font-size: 12px;
+}
+
+.clearfix:after {
+	content: '.';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clear {
+	clear: both
+}
+
+.w {
+	width: 1190px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.top{
+  	background-color: #f8f8f8;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    position: relative;
+    z-index: 290;
+}
+.root-body .w{
+  	width: 1460px;
+}
+
+.fl, .Left {
+    float: left;
+}
+
+
+.fr, .Right {
+    float: right;
+}
+
+menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+ 
+.fore {
+    position: relative;
+    border: 1px solid #f8f8f8;
+    height: 28px;
+}
+
+
+.top .fore .drop-title {
+    position: relative;
+    display: block;
+    padding: 0 20px 0 8px;
+    z-index: 200;
+}
+.top a {
+    color: #999;
+}
+
+.top .fore .mll-self {
+    width: 68px;
+    line-height: 22px;
+    padding: 1px 10px 10px;
+}
+.top .fore .dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 28px;
+    left: -1px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    display: none;
+    border-top: none;
+}
+
+.top li {
+    height: 22px;
+    line-height: 28px;
+}
+
+
