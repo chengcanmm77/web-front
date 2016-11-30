@@ -5,12 +5,13 @@
 		<title></title>
 		<link rel="stylesheet" href="css/common/bootstrap.css" />
 		<link rel="stylesheet" href="css/common/bootstrap-theme.css" />
-		<link rel="stylesheet" href="css/common/index.css" />
+		<link rel="stylesheet" href="css/index.css" />
 		<script type="text/javascript" src="js/common/jquery-2.0.3.min.js"> </script>
 		<script type="text/javascript" src="js/common/bootstrap.js"> </script>	
+		<script type="text/javascript" src="js/index.js"></script>
 	</head>
-	<body class="root-body">
-		<div class="top">
+	<body style="min-width: 1190px;" class=" root-body">
+		<div class="site-nav">
 			<div class="w clearfix">
 				<ul class="fl menu clearfix">
 					<li>
@@ -20,29 +21,87 @@
 					</li>
 				</ul>
 				<ul class="fr menu clearfix">
-					<li class="fl fore">
-						<a class="drop-title" href="/user/?act=index" target="_blank">我的美乐乐
-							<i class="drop-arrow" target="_blank"></i>
-						</a>
-						<ul class="dropdown mll-self">
-                    		<li><a href="/user/?act=order_list" target="_blank">我的订单</a></li>
-                    		<li><a href="/user/?act=coin_log" target="_blank">我的金币</a></li>
-                    		<li><a href="/user/?act=bonus" target="_blank">我的红包</a></li>
-                    		<li><a href="/user/?act=collection_list" target="_blank">我的收藏</a></li>
-                    		<li><a href="/user/?act=comment_list" target="_blank">我要评价</a></li>
-                    		<li><a href="/user/?act=insured_apply" target="_blank">申请保价</a></li>
-                		</ul>
-					</li>
-					<li class="fl fore">购物车0</li>
-					<li class="fl fore"><a href="javascript:;" onclick="addFavorite()">收藏本站</a></li>
-					<li class="fl fore">帮助中心</li>
-				</ul>
+		            <li class="fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/user/?act=index" target="_blank">我的美乐乐<i class="drop-arrow" target="_blank"></i></a>
+		                <ul class="dropdown mll-self">
+		                    <li><a href="http://www.meilele.com/user/?act=order_list" target="_blank">我的订单</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=coin_log" target="_blank">我的金币</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=bonus" target="_blank">我的红包</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=collection_list" target="_blank">我的收藏</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=comment_list" target="_blank">我要评价</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=insured_apply" target="_blank">申请保价</a></li>
+		                </ul>
+		            </li>
+		
+		           <li id="JS_cart" class="phc-cart fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/flow/?step=cart&amp;rel=header" target="_blank"><i class="i-cart"></i><span class="cart-word">购物车<span id="JS_cart_num" class="cart-count">0</span></span><i class="drop-arrow"></i></a>
+		                <div id="JS_cart_box" class="cart-box dropdown cart-self">
+		                    <ul id="JS_cart_list" class="cart-list" onclick="Cart.del(event);"><li class="nothing"><b class="common-bg nothing-icon"></b>&nbsp;购物车中还没有商品，赶紧选购吧！</li></ul>
+		                    <div id="JS_count_area" class="cart-count none shopcart-count">
+		                        <p class="count-area">共<span id="JS_cart_count">0</span>件商品，共计<strong id="JS_count_total" class="count-total red">¥00.00</strong></p>
+		                        <a class="count-btn" target="_blank" href="http://www.meilele.com/flow/?step=cart&amp;rel=header">去购物车结算</a>
+		                    </div>
+		                </div>
+		            </li>
+		            
+		            <li class="fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/user/?act=index" target="_blank"><i class="i-scan"></i><span class="scan-word">关注美乐乐</span><i class="drop-arrow"></i></a>
+		                <ul class="dropdown two-dimension">
+		                    <li>
+		                        <a href="http://www.meilele.com/topic/201602_315dc.html?topdaohang" class="JS_header_gaerCode" target="_blank">
+		                            <img src="image/qrcode.jpg" width="132px" height="132px">
+		                            <span>扫一扫</span>
+		                            <img src="image/qrcode.jpg">
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		            <li class="fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/article_cat-4/article-656.html" target="_blank">帮助中心<i class="drop-arrow" target="_blank"></i></a>
+		                <ul class="dropdown help-center">
+		                    <li><a href="http://www.meilele.com/join_us-1.html" target="_blank">招商加盟</a></li>
+		                    <li><a href="http://www.meilele.com/article_cat-6/article-101.html" target="_blank">购买流程</a></li>
+		                    <li><a href="javascript:;" onclick="window.mchat&amp;&amp;window.mchat.openui&amp;&amp; window.mchat.openui()" rel="nofollow">在线帮助</a></li>
+		                    <li><a href="http://www.meilele.com/page_buniess_purchase.html" target="_blank">企业采购</a></li>
+		                </ul>
+		            </li>
+		            <li class="fl banner">
+		                <a href="javascript:;" onclick="addFavorite()">收藏本站</a>
+		            </li>
+		            
+		            <li class="fl banner last">
+		                <span class="blank" style="width:222px;height:24px;z-index:2"></span>
+		                <div id="JS_head_scoll_phone_527" class="JS_head_scoll_phone_527_active_br"><div class="expr_scroll"><div class="expr_view" id="_JS_scroll_phone_g" onmouseover="window._headPhoneScroll527Lock=true" onmouseout="window._headPhoneScroll527Lock=false" style="margin-top: -168px;"><div class="expr_item" id="JS_show_hot_527"><span>全国热线：</span><span class="hotLine">400 0098666</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳市体验馆：</a><span class="hotLine">0571-63106685</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">下城区体验馆：</a><span class="hotLine">0571-87823268</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安市体验馆：</a><span class="hotLine">0571-61134005</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆：</a><span class="hotLine">0571-64688860</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">西湖区体验馆：</a><span class="hotLine">0571-87005186</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">余杭区体验馆：</a><span class="hotLine">0571-88696966</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">滨江区体验馆：</a><span class="hotLine">0571-82190819</span></div><div class="expr_item" id="JS_show_hot_527"><span>全国热线：</span><span class="hotLine">400 0098666</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳市体验馆：</a><span class="hotLine">0571-63106685</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">下城区体验馆：</a><span class="hotLine">0571-87823268</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安市体验馆：</a><span class="hotLine">0571-61134005</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆：</a><span class="hotLine">0571-64688860</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">西湖区体验馆：</a><span class="hotLine">0571-87005186</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">余杭区体验馆：</a><span class="hotLine">0571-88696966</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">滨江区体验馆：</a><span class="hotLine">0571-82190819</span></div></div></div><div class="show_panel" id="JS_show_panel_527" style="display: none;"><span class="item"><a href="http://www.meilele.com/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳市体验馆：</a><span class="hotLine">0571-63106685</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">下城区体验馆：</a><span class="hotLine">0571-87823268</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安市体验馆：</a><span class="hotLine">0571-61134005</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆：</a><span class="hotLine">0571-64688860</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">西湖区体验馆：</a><span class="hotLine">0571-87005186</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">余杭区体验馆：</a><span class="hotLine">0571-88696966</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">滨江区体验馆：</a><span class="hotLine">0571-82190819</span></span></div></div>
+		            </li>
+		        </ul>
 			</div>
 		</div>
 		
-		<div class="top-seach">
-			
-		</div>
+	 <div class="page-header"> 
+	    <div class="w ph-contenter clearfix">
+	        <a id="JS_Header_Logo_link_home" class="fl logo" href="http://www.meilele.com/hangzhou/">
+	            <img src="image/logo.png" alt="" width="193" height="61">
+	        </a>
+	        <a onclick="_clickSearchAd()" title="12.12岁末狂欢" class="fl ph-ad" href="http://www.meilele.com/topic/201611_D12smkh.html?site_from=sskzc#thg=gaca&amp;adg=gaco&amp;adn=2013%E6%90%9C%E7%B4%A2%E6%A1%86%E5%B7%A6%E4%BE%A7%E5%B0%8F%E5%B9%BF%E5%91%8A&amp;ado=1&amp;adc=0" rel="nofollow" target="_blank">
+	            <img width="170" height="60" src="image/huodong.gif" alt="12.12岁末狂欢">
+	        </a>
+	        <div class="fl search-group">
+	            <form class="search-form clearfix" action="http://www.meilele.com/category-9999/" onsubmit="return MLL_header_search_submit();" target="_blank">
+	                <input type="hidden" name="fl" value="q">
+	                <input type="submit" class="submit-btn fr" value="搜 索" onclick="window._gaq.push([&#39;_trackEvent&#39;,&#39;2016美乐乐搜索 &#39;,&#39;固定搜索按钮&#39;,&#39;click&#39;])">
+	                <input id="JS_MLL_search_header_input" name="keywords" value="" autocomplete="off" type="text" maxlength="255" class="search-input gray" onclick="window._gaq.push([&#39;_trackEvent&#39;,&#39;2016美乐乐搜索 &#39;,&#39;固定文字输入框&#39;,&#39;click&#39;])" data-sug="none">
+	            </form>
+	            <div id="JS_search_suggest" class="suggest"></div>
+	            <div data-target="search" id="JS_search_history" class="history clearfix" style="display: none;"></div>
+	            <div class="search-hot">
+	                <a target="_blank" class="hot-key" title="抢1500元红包" style="color:#FF6600;" href="http://www.meilele.com/topic/201611_D12smkh.html?from=gjc" onclick="_clickHotSearch(this);">抢1500元红包</a><a target="_blank" class="hot-key" title="床" style="color:#999999;" href="http://www.meilele.com/category-chuang/?from=gjc" onclick="_clickHotSearch(this);">床</a><a target="_blank" class="hot-key" title="沙发" style="color:#999999;" href="http://www.meilele.com/category-shafa/?from=gjc" onclick="_clickHotSearch(this);">沙发</a><a target="_blank" class="hot-key" title="餐桌椅" style="color:#999999;" href="http://www.meilele.com/category-cantingtaozhuang/?from=gjc" onclick="_clickHotSearch(this);">餐桌椅</a><a target="_blank" class="hot-key" title="实木床" style="color:#999999;" href="http://www.meilele.com/keywords/shimuchuang/?from=gjc" onclick="_clickHotSearch(this);">实木床</a><a target="_blank" class="hot-key" title="床垫大促" style="color:#FF6600;" href="http://www.meilele.com/topic/20150604-cdlhdc1.html?from=gjc" onclick="_clickHotSearch(this);">床垫大促</a><a target="_blank" class="hot-key" title="转角沙发" style="color:#999999;" href="http://www.meilele.com/category-shafa/list-71_19859/?from=gjc?from=gjc" onclick="_clickHotSearch(this);">转角沙发</a><a target="_blank" class="hot-key" title="灯饰" style="color:#999999;" href="http://www.meilele.com/category-dengshizhaoming/?from=gjc" onclick="_clickHotSearch(this);">灯饰</a>            </div>
+	        </div>
+	        <div class="drcode-phone">
+	            <a href="http://www.meilele.com/client/iphone.html" target="_blank"><img src="" alt="" width="75" height="75" style="margin:7px 0 5px;"></a>
+	            <p><a href="http://www.meilele.com/client/iphone.html" target="_blank" style="color:#999">手机逛美乐乐</a></p>
+	        </div>
+	    </div>
+	</div>   
 		
 		<div class="nav">
 			
