@@ -3346,7 +3346,7 @@ html,html body {
 	cursor: pointer;
 	width: 16px;
 	height: 14px;
-	background: url('/imag/site.png') -275px -12px no-repeat;
+	background: url('image/site.png') -275px -12px no-repeat;
 	_background: url('image/site.gif') -275px -12px no-repeat;
 }
 
