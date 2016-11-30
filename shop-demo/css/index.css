@@ -3402,7 +3402,7 @@ html,html body {
 	display: block;
 	width: 27px;
 	height: 22px;
-	background: url('/images/common/site/credit.png') no-repeat 0 0;
+	background: url('image/credit.png') no-repeat 0 0;
 	left: 0;
 	top: 10px;
 }
@@ -3412,7 +3412,7 @@ html,html body {
 	display: block;
 	width: 27px;
 	height: 21px;
-	background: url('/images/common/site/credit.png') no-repeat 0 -47px;
+	background: url('image/credit.png') no-repeat 0 -47px;
 	left: 0;
 	top: 10px;
 }
@@ -3422,7 +3422,7 @@ html,html body {
 	display: block;
 	width: 27px;
 	height: 25px;
-	background: url('/images/common/site/credit.png') no-repeat 0 -22px;
+	background: url('image/credit.png') no-repeat 0 -22px;
 	left: 0;
 	top: 10px;
 }
@@ -3473,7 +3473,7 @@ html,html body {
 	height: 35px;
 	float: left;
 	background: url('image/site.png') -92px -202px no-repeat;
-	_background: url('/imagesite.gif') -92px -202px no-repeat;
+	_background: url('imagesite.gif') -92px -202px no-repeat;
 	margin-top: 7px;
 }
 
