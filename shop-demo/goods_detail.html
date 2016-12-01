@@ -3,7 +3,1627 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" href="css/common/bootstrap.css" />
+		<link rel="stylesheet" href="css/common/bootstrap-theme.css" />
+		<link rel="stylesheet" href="css/goods.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<script type="text/javascript" src="js/common/jquery-2.0.3.min.js"> </script>
+		<script type="text/javascript" src="js/common/bootstrap.js"> </script>	
+		<script type="text/javascript" src="js/common/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/goods.js"></script>
 	</head>
-	<body>
+<body class="root-body">
+	<div class="site-nav">
+			<div class="w clearfix">
+				<ul class="fl menu clearfix">
+					<li>
+						<a>首页</a>&nbsp;&nbsp;
+						<a>请登录</a>&nbsp;&nbsp;
+						<a>免费注册</a>
+					</li>
+				</ul>
+				<ul class="fr menu clearfix">
+		            <li class="fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/user/?act=index" target="_blank">我的美乐乐<i class="drop-arrow" target="_blank"></i></a>
+		                <ul class="dropdown mll-self">
+		                    <li><a href="http://www.meilele.com/user/?act=order_list" target="_blank">我的订单</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=coin_log" target="_blank">我的金币</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=bonus" target="_blank">我的红包</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=collection_list" target="_blank">我的收藏</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=comment_list" target="_blank">我要评价</a></li>
+		                    <li><a href="http://www.meilele.com/user/?act=insured_apply" target="_blank">申请保价</a></li>
+		                </ul>
+		            </li>
+		
+		           <li id="JS_cart" class="phc-cart fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/flow/?step=cart&amp;rel=header" target="_blank"><i class="i-cart"></i><span class="cart-word">购物车<span id="JS_cart_num" class="cart-count">0</span></span><i class="drop-arrow"></i></a>
+		                <div id="JS_cart_box" class="cart-box dropdown cart-self">
+		                    <ul id="JS_cart_list" class="cart-list" onclick="Cart.del(event);"><li class="nothing"><b class="common-bg nothing-icon"></b>&nbsp;购物车中还没有商品，赶紧选购吧！</li></ul>
+		                    <div id="JS_count_area" class="cart-count none shopcart-count">
+		                        <p class="count-area">共<span id="JS_cart_count">0</span>件商品，共计<strong id="JS_count_total" class="count-total red">¥00.00</strong></p>
+		                        <a class="count-btn" target="_blank" href="http://www.meilele.com/flow/?step=cart&amp;rel=header">去购物车结算</a>
+		                    </div>
+		                </div>
+		            </li>
+		            
+		            <li class="fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/user/?act=index" target="_blank"><i class="i-scan"></i><span class="scan-word">关注美乐乐</span><i class="drop-arrow"></i></a>
+		                <ul class="dropdown two-dimension">
+		                    <li>
+		                        <a href="http://www.meilele.com/topic/201602_315dc.html?topdaohang" class="JS_header_gaerCode" target="_blank">
+		                            <img src="image/qrcode.jpg" width="132px" height="132px">
+		                            <span>扫一扫</span>
+		                            <img src="image/qrcode.jpg">
+		                        </a>
+		                    </li>
+		                </ul>
+		            </li>
+		            <li class="fl fore">
+		                <a class="drop-title" href="http://www.meilele.com/article_cat-4/article-656.html" target="_blank">帮助中心<i class="drop-arrow" target="_blank"></i></a>
+		                <ul class="dropdown help-center">
+		                    <li><a href="http://www.meilele.com/join_us-1.html" target="_blank">招商加盟</a></li>
+		                    <li><a href="http://www.meilele.com/article_cat-6/article-101.html" target="_blank">购买流程</a></li>
+		                    <li><a href="javascript:;" onclick="window.mchat&amp;&amp;window.mchat.openui&amp;&amp; window.mchat.openui()" rel="nofollow">在线帮助</a></li>
+		                    <li><a href="http://www.meilele.com/page_buniess_purchase.html" target="_blank">企业采购</a></li>
+		                </ul>
+		            </li>
+		            <li class="fl banner">
+		                <a href="javascript:;" onclick="addFavorite()">收藏本站</a>
+		            </li>
+		            
+		            <li class="fl banner last">
+		                <span class="blank" style="width:222px;height:24px;z-index:2"></span>
+		                <div id="JS_head_scoll_phone_527" class="JS_head_scoll_phone_527_active_br"><div class="expr_scroll"><div class="expr_view" id="_JS_scroll_phone_g" onmouseover="window._headPhoneScroll527Lock=true" onmouseout="window._headPhoneScroll527Lock=false" style="margin-top: -168px;"><div class="expr_item" id="JS_show_hot_527"><span>全国热线：</span><span class="hotLine">400 0098666</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳市体验馆：</a><span class="hotLine">0571-63106685</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">下城区体验馆：</a><span class="hotLine">0571-87823268</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安市体验馆：</a><span class="hotLine">0571-61134005</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆：</a><span class="hotLine">0571-64688860</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">西湖区体验馆：</a><span class="hotLine">0571-87005186</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">余杭区体验馆：</a><span class="hotLine">0571-88696966</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">滨江区体验馆：</a><span class="hotLine">0571-82190819</span></div><div class="expr_item" id="JS_show_hot_527"><span>全国热线：</span><span class="hotLine">400 0098666</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳市体验馆：</a><span class="hotLine">0571-63106685</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">下城区体验馆：</a><span class="hotLine">0571-87823268</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安市体验馆：</a><span class="hotLine">0571-61134005</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆：</a><span class="hotLine">0571-64688860</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">西湖区体验馆：</a><span class="hotLine">0571-87005186</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">余杭区体验馆：</a><span class="hotLine">0571-88696966</span></div><div class="expr_item"><a href="http://www.meilele.com/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">滨江区体验馆：</a><span class="hotLine">0571-82190819</span></div></div></div><div class="show_panel" id="JS_show_panel_527" style="display: none;"><span class="item"><a href="http://www.meilele.com/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳市体验馆：</a><span class="hotLine">0571-63106685</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">下城区体验馆：</a><span class="hotLine">0571-87823268</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安市体验馆：</a><span class="hotLine">0571-61134005</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆：</a><span class="hotLine">0571-64688860</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">西湖区体验馆：</a><span class="hotLine">0571-87005186</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">余杭区体验馆：</a><span class="hotLine">0571-88696966</span></span><span class="item"><a href="http://www.meilele.com/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">滨江区体验馆：</a><span class="hotLine">0571-82190819</span></span></div></div>
+		            </li>
+		        </ul>
+			</div>
+		</div>
+		
+	 <div class="page-header"> 
+	    <div class="w ph-contenter clearfix">
+	        <a id="JS_Header_Logo_link_home" class="fl logo" href="http://www.meilele.com/hangzhou/">
+	            <img src="image/logo.png" alt="" width="193" height="61">
+	        </a>
+	        <a onclick="_clickSearchAd()" title="12.12岁末狂欢" class="fl ph-ad" href="http://www.meilele.com/topic/201611_D12smkh.html?site_from=sskzc#thg=gaca&amp;adg=gaco&amp;adn=2013%E6%90%9C%E7%B4%A2%E6%A1%86%E5%B7%A6%E4%BE%A7%E5%B0%8F%E5%B9%BF%E5%91%8A&amp;ado=1&amp;adc=0" rel="nofollow" target="_blank">
+	            <img width="170" height="60" src="image/huodong.gif" alt="12.12岁末狂欢">
+	        </a>
+	        <div class="fl search-group">
+	            <form class="search-form clearfix" action="http://www.meilele.com/category-9999/" onsubmit="return MLL_header_search_submit();" target="_blank">
+	                <input type="hidden" name="fl" value="q">
+	                <input type="submit" class="submit-btn fr" value="搜 索" onclick="window._gaq.push([&#39;_trackEvent&#39;,&#39;2016美乐乐搜索 &#39;,&#39;固定搜索按钮&#39;,&#39;click&#39;])">
+	                <input id="JS_MLL_search_header_input" name="keywords" value="" autocomplete="off" type="text" maxlength="255" class="search-input gray" onclick="window._gaq.push([&#39;_trackEvent&#39;,&#39;2016美乐乐搜索 &#39;,&#39;固定文字输入框&#39;,&#39;click&#39;])" data-sug="none">
+	            </form>
+	            <div id="JS_search_suggest" class="suggest"></div>
+	            <div data-target="search" id="JS_search_history" class="history clearfix" style="display: none;"></div>
+	            <div class="search-hot">
+	                <a target="_blank" class="hot-key" title="抢1500元红包" style="color:#FF6600;" href="http://www.meilele.com/topic/201611_D12smkh.html?from=gjc" onclick="_clickHotSearch(this);">抢1500元红包</a><a target="_blank" class="hot-key" title="床" style="color:#999999;" href="http://www.meilele.com/category-chuang/?from=gjc" onclick="_clickHotSearch(this);">床</a><a target="_blank" class="hot-key" title="沙发" style="color:#999999;" href="http://www.meilele.com/category-shafa/?from=gjc" onclick="_clickHotSearch(this);">沙发</a><a target="_blank" class="hot-key" title="餐桌椅" style="color:#999999;" href="http://www.meilele.com/category-cantingtaozhuang/?from=gjc" onclick="_clickHotSearch(this);">餐桌椅</a><a target="_blank" class="hot-key" title="实木床" style="color:#999999;" href="http://www.meilele.com/keywords/shimuchuang/?from=gjc" onclick="_clickHotSearch(this);">实木床</a><a target="_blank" class="hot-key" title="床垫大促" style="color:#FF6600;" href="http://www.meilele.com/topic/20150604-cdlhdc1.html?from=gjc" onclick="_clickHotSearch(this);">床垫大促</a><a target="_blank" class="hot-key" title="转角沙发" style="color:#999999;" href="http://www.meilele.com/category-shafa/list-71_19859/?from=gjc?from=gjc" onclick="_clickHotSearch(this);">转角沙发</a><a target="_blank" class="hot-key" title="灯饰" style="color:#999999;" href="http://www.meilele.com/category-dengshizhaoming/?from=gjc" onclick="_clickHotSearch(this);">灯饰</a>            </div>
+	        </div>
+	        <div class="drcode-phone">
+	            <a href="http://www.meilele.com/client/iphone.html" target="_blank"><img src="" alt="" width="75" height="75" style="margin:7px 0 5px;"></a>
+	            <p><a href="http://www.meilele.com/client/iphone.html" target="_blank" style="color:#999">手机逛美乐乐</a></p>
+	        </div>
+	    </div>
+	</div>
+	
+	
+		<!--
+    	作者：bucketcheng@gmail.com
+    	时间：2016-11-30
+    	描述：menu
+    -->
+	<div class="navigator-index">
+    <div class="w clearfix">
+        <div class="menu-panel">
+            <h2>商品分类</h2>
+            <ul class="menu-map" id="JS_mll_menu_map" style="display: none;">
+                <li class="map-item first-map">
+                    <div class="sub" style="opacity: 1; padding-left: 10px;">
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-chuang/?from=jjc_fldh" target="_blank"><i class="i-t"></i>床类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                    <a target="_blank" href="/keywords/shimuchuang/?from=jjc_fldh" style="color:#cf000e">实木床</a>
+                                    <a target="_blank" href="/keywords/buyichuang/?from=jjc_fldh" style="color:#666;">布艺床</a>
+                                    <a target="_blank" href="/keywords/zhenpichuang/?from=jjc_fldh" style="color:#666;">真皮床</a>
+                                    <a target="_blank" href="/keywords/gaoxiangchuang/?from=jjc_fldh" style="color:#666;">高箱床</a>
+                                    <a target="_blank" href="/category-meiguichuang/?from=jjc_fldh" style="color:#cf000e">美规床</a>
+                                    <a target="_blank" href="/keywords/chuangbanchuang/?from=jjc_fldh" style="color:#666;">床板床</a>
+                                    <a target="_blank" href="/keywords/tatamichuang/?from=jjc_fldh" style="color:#666;">榻榻米床</a>
+                                    <a target="_blank" href="/category-chuang/list-44_19637/?from=jjc_fldh" style="color:#666;">排骨架床</a>
+                                    <a target="_blank" href="/keywords/oushichuang/?from=jjc_fldh" style="color:#666;">欧式床</a>
+                                    <a target="_blank" href="/category-chuang/list-s302/?from=jjc_fldh" style="color:#666;">中式床</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-chuangdian/?from=jjc_fldh" target="_blank"><i class="i-t"></i>床垫类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="category-jinkouchuangdian/?from=jjc_fldh" style="color:#cf000e">美国进口床垫</a>
+                                <a target="_blank" href="/category-chuangdian/list-79_20150/?from=jjc_fldh" style="color:#666;">椰棕床垫</a>
+                                <a target="_blank" href="/keywords/rujiaochuangdian/?from=jjc_fldh" style="color:#cf000e">乳胶床垫</a>
+                                <a target="_blank" href="/category-chuangdian/list-79_20153/?from=jjc_fldh" style="color:#666;">弹簧床垫</a>
+                                <a target="_blank" href="/category-chuangdian/list-79_20151/?from=jjc_fldh" style="color:#666;">3D床垫</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-yigui/?from=jjc_fldh" target="_blank"><i class="i-t"></i>柜类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-chuangtougui/?from=jjc_fldh" style="color:#666;">床头柜</a>
+                                <a target="_blank" href="/category-chuangtougui/list-m305/?from=jjc_fldh" style="color:#666;">实木床头柜</a>
+                                <a target="_blank" href="/keywords/tianyuanchuangtougui/?from=jjc_fldh" style="color:#666;">田园床头柜</a>
+                                <a target="_blank" href="/category-dingzhiyigui/?from=jjc_fldh" style="color:#cf000e">定制衣柜</a>
+                                <a target="_blank" href="/category-yigui/list-79_21120/?from=jjc_fldh" style="color:#666;">拉门衣柜</a>
+                                <a target="_blank" href="/category-yigui/list-79_21119/?from=jjc_fldh" style="color:#cf000e">趟门衣柜</a>
+                                <a target="_blank" href="/category-yigui/list-78_21115/?from=jjc_fldh" style="color:#666;">四门衣柜</a>
+                                <a target="_blank" href="/category-dougui/?from=jjc_fldh" style="color:#666;">斗柜</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-wofang/?from=jjc_fldh" target="_blank"><i class="i-t"></i>更多分类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-woshitaofang/?from=jjc_fldh" style="color:#666;">卧室套装</a>
+                                <a target="_blank" href="/category-zhuangtai/?from=jjc_fldh" style="color:#cf000e">妆台镜/妆凳</a>
+                                <a target="_blank" href="/category-chuanyijing/?from=jjc_fldh" style="color:#666;">穿衣镜/衣帽架</a>
+                                <a target="_blank" href="/category-guiyichuangweideng/?from=jjc_fldh" style="color:#666;">床尾凳</a>
+                            </li>
+                        </ul>
+                         <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/brand/?from=jjc_fldh" target="_blank"><i class="i-t"></i>推荐品牌</a>
+                            </li>
+                            <li class="fl sub-content last">
+                                <a target="_blank" href="/category-wofang/list-b241/?from=jjc_fldh" style="color:#666;">凯撒豪庭</a>
+                                <a target="_blank" href="/category-wofang/list-b111/?from=jjc_fldh" style="color:#666;">韩菲尔</a>
+                                <a target="_blank" href="/category-wofang/list-b212/?from=jjc_fldh" style="color:#666;">卡富亚</a>
+                                <a target="_blank" href="/category-wofang/list-b283/?from=jjc_fldh" style="color:#666;">木木原</a>
+                                <a target="_blank" href="/category-wofang/list-b352/?from=jjc_fldh" style="color:#666;">艾玛诗</a>
+                                <a target="_blank" href="/category-wofang/list-b474/?from=jjc_fldh" style="color:#cf000e">喜临门•睡美人</a>
+                                <a target="_blank" href="/category-wofang/list-b568/?from=jjc_fldh" style="color:#666;">迪诺迪奥</a>
+                                <a target="_blank" href="/category-wofang/list-b506/?from=jjc_fldh" style="color:#cf000e">Mlily梦百合</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <dl class="tlt">
+                        <dt>
+                            <a target="_blank" href="/category-wofang/?from=jjc_fldh" title="卧室家具" class="t"><i class="i-menu i-menu-0"></i>卧室家具</a>
+                        </dt>
+                        <dd>
+	                        <a target="_blank" href="/category-chuang/?from=jjc_fldh" title="床" class="t" style="color:#cf000e;font-weight:bold;">床</a>
+	                        <a target="_blank" href="/category-chuangdian/?from=jjc_fldh" title="床垫" class="t" style="color:#787878;font-weight:normal;">床垫</a>
+	                        <a target="_blank" href="/category-yigui/?from=jjc_fldh" title="衣柜" class="t" style="color:#cf000e;font-weight:bold;">衣柜</a>
+	                        <a target="_blank" href="/category-woshitaofang/?from=jjc_fldh" title="卧室套装" class="t" style="color:#787878;font-weight:normal;">卧室套装</a>
+                       </dd>
+                   </dl>
+                </li>
+                <li class="map-item">
+                    <div class="sub" style="opacity: 1; padding-left: 10px;">
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-shafa/?from=jjc_fldh" target="_blank"><i class="i-t"></i>沙发类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/shimushafa/?from=jjc_fldh" style="color:#666;">实木沙发</a>
+                                <a target="_blank" href="/keywords/buyishafa/?from=jjc_fldh" style="color:#666;">布艺沙发</a>
+                                <a target="_blank" href="/keywords/zhuanjiaoshafa/?from=jjc_fldh" style="color:#cf000e">转角沙发</a>
+                                <a target="_blank" href="/keywords/oushishafa/?from=jjc_fldh" style="color:#666;">欧式沙发</a>
+                                <a target="_blank" href="/keywords/zhenpishafa/?from=jjc_fldh" style="color:#cf000e">真皮沙发</a>
+                                <a target="_blank" href="/category-shafa/list-s302/?from=jjc_fldh" style="color:#666;">中式沙发</a>
+                                <a target="_blank" href="/keywords/gongnengshafa/?from=jjc_fldh" style="color:#666;">功能沙发</a>
+                                <a target="_blank" href="/keywords/meishishafa/?from=jjc_fldh" style="color:#666;">美式沙发</a>
+                                <a target="_blank" href="/keywords/shafachuang/?from=jjc_fldh" style="color:#666;">沙发床</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-chajihebianzhuo/?from=jjc_fldh" target="_blank"><i class="i-t"></i>茶几类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/shimuchaji/?from=jjc_fldh" style="color:#cf000e">实木茶几</a>
+                                <a target="_blank" href="/keywords/fangchaji/?from=jjc_fldh" style="color:#666;">方茶几</a>
+                                <a target="_blank" href="/keywords/bolichaji/?from=jjc_fldh" style="color:#666;">玻璃茶几</a>
+                                <a target="_blank" href="/keywords/dalishichaji/?from=jjc_fldh" style="color:#cf000e">大理石茶几</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-dianshigui/?from=jjc_fldh" target="_blank"><i class="i-t"></i>柜类</a>
+                            </li>
+                            <li class="fl sub-content">
+	                            <a target="_blank" href="/category-dianshigui/?from=jjc_fldh" style="color:#666;">电视柜</a>
+	                            <a target="_blank" href="/category-duoyonggui/?from=jjc_fldh" style="color:#666;">装饰柜</a>
+	                            <a target="_blank" href="/category-xiegui/?from=jjc_fldh" style="color:#666;">鞋柜</a>
+	                            <a target="_blank" href="/category-jiantinggui/?from=jjc_fldh" style="color:#cf000e">间厅/玄关柜</a>
+	                            <a target="_blank" href="/keywords/osktdsg/?from=jjc_fldh" style="color:#666;">欧式电视柜</a>
+	                            <a target="_blank" href="/keywords/ketingjiugui/?from=jjc_fldh" style="color:#666;">客厅酒柜</a>
+	                            <a target="_blank" href="/keywords/shimuxiegui/?from=jjc_fldh" style="color:#666;">实木鞋柜</a>
+	                            <a target="_blank" href="/keywords/ktjtg/?from=jjc_fldh" style="color:#666;">客厅间厅柜</a>
+	                        </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-keting/?from=jjc_fldh" target="_blank"><i class="i-t"></i>更多分类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-ketingtaofang/?from=jjc_fldh" style="color:#666;">客厅套装</a>
+                                <a target="_blank" href="/category-denglei/?from=jjc_fldh" style="color:#666;">休闲椅/凳</a>
+                                <a target="_blank" href="/category-pingfeng/?from=jjc_fldh" style="color:#666;">屏风</a>
+                                <a target="_blank" href="/category-huajia/?from=jjc_fldh" style="color:#666;">花架/装饰架</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/brand/?from=jjc_fldh" target="_blank"><i class="i-t"></i>推荐品牌</a>
+                            </li>
+                            <li class="fl sub-content last">
+                                <a target="_blank" href="/category-keting/list-b1287/?from=jjc_fldh" style="color:#cf000e">宜华生活</a>
+                                <a target="_blank" href="/category-keting/list-b550/?from=jjc_fldh" style="color:#cf000e">利豪</a>
+                                <a target="_blank" href="/category-keting/list-b267/?from=jjc_fldh" style="color:#666;">蒂美悦</a>
+                                <a target="_blank" href="/category-keting/list-b554/?from=jjc_fldh" style="color:#666;">法兰西玫瑰</a>
+                                <a target="_blank" href="/category-keting/list-b355/?from=jjc_fldh" style="color:#666;">彼岸阳光</a>
+                                <a target="_blank" href="/category-keting/list-b730/?from=jjc_fldh" style="color:#666;">维斯维木</a>
+                                <a target="_blank" href="/category-keting/list-b1170/?from=jjc_fldh" style="color:#666;">A家家居</a>
+                                <a target="_blank" href="/category-keting/list-b601/?from=jjc_fldh" style="color:#666;">苏玫尔</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <dl class="tlt">
+                        <dt>
+                            <a target="_blank" href="/category-keting/?from=jjc_fldh" title="客厅家具" class="t"><i class="i-menu i-menu-1"></i>客厅家具</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="/category-shafa/?from=jjc_fldh" title="沙发" class="t" style="color:#cf000e;font-weight:bold;">沙发</a>
+                            <a target="_blank" href="/category-chajihebianzhuo/?from=jjc_fldh" title="茶几/边桌" class="t" style="color:#787878;font-weight:normal;">茶几/边桌</a>
+                            <a target="_blank" href="/category-dianshigui/?from=jjc_fldh" title="电视柜" class="t" style="color:#cf000e;font-weight:bold;">电视柜</a>
+                            <a target="_blank" href="/category-xiegui/?from=jjc_fldh" title="鞋柜" class="t" style="color:#787878;font-weight:normal;">鞋柜</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="map-item">
+                    <div class="sub" style="opacity: 0.8; padding-left: 0px;">
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-canzhuo/?from=jjc_fldh" target="_blank"><i class="i-t"></i>餐桌类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/changcanzhuo/?from=jjc_fldh" style="color:#666;">长餐桌</a>
+                                <a target="_blank" href="/keywords/yuancanzhuo/?from=jjc_fldh" style="color:#666;">圆餐桌</a>
+                                <a target="_blank" href="/keywords/zhediezhuoyi/?from=jjc_fldh" style="color:#cf000e">折叠餐桌</a>
+                                <a target="_blank" href="/keywords/trdlscz/?from=jjc_fldh" style="color:#666;">大理石餐桌</a>
+                                <a target="_blank" href="/keywords/shimucanzhuocanyi/?from=jjc_fldh" style="color:#cf000e">实木餐桌</a>
+                                <a target="_blank" href="/keywords/bolicanzhuo/?from=jjc_fldh" style="color:#666;">玻璃餐桌</a>
+                                <a target="_blank" href="/keywords/xiandaicanzhuoyi/多功能餐台?from=jjc_fldh" style="color:#/keywords/dgnct/">现代餐桌</a>
+                            </li>
+                        </ul>
+                            <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-canyi/?from=jjc_fldh" target="_blank"><i class="i-t"></i>餐椅类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/fushoucanyi/，无扶手餐椅?from=jjc_fldh" style="color:#/keywords/wufushoucanyi/">扶手餐椅</a>
+                                <a target="_blank" href="/keywords/oushicanyi/?from=jjc_fldh" style="color:#666;">欧式餐椅</a>
+                                <a target="_blank" href="/keywords/meishicanyi/?from=jjc_fldh" style="color:#666;">美式餐椅</a>
+                                <a target="_blank" href="/keywords/tianyuancanyi/?from=jjc_fldh" style="color:#cf000e">田园餐椅</a>
+                                <a target="_blank" href="/keywords/shimucanyi/?from=jjc_fldh" style="color:#666;">实木餐椅</a>
+                                <a target="_blank" href="/keywords/jianyuecanyi/?from=jjc_fldh" style="color:#cf000e">简约餐椅</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-canbiangui/?from=jjc_fldh" target="_blank"><i class="i-t"></i>餐边柜类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/tianyuancanbiangui/?from=jjc_fldh" style="color:#666;">田园餐边柜</a>
+                                <a target="_blank" href="/keywords/meishicanbiangui/?from=jjc_fldh" style="color:#666;">美式餐边柜</a>
+                                <a target="_blank" href="/keywords/shimucanbiangui/?from=jjc_fldh" style="color:#666;">实木餐边柜</a>
+                            </li>
+                        </ul>
+                         <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-canting/?from=jjc_fldh" target="_blank"><i class="i-t"></i>更多分类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-cantingtaozhuang/?from=jjc_fldh" style="color:#666;">餐厅套装</a>
+                                <a target="_blank" href="/keywords/canzhuoyizuhe/?from=jjc_fldh" style="color:#666;">餐桌椅组合</a>
+                                <a target="_blank" href="/keywords/dzhczy/?from=jjc_fldh" style="color:#666;">地中海餐桌椅</a>
+                                <a target="_blank" href="/keywords/xiuxiancanzhuoyi/?from=jjc_fldh" style="color:#666;">欧式餐桌椅</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/brand/?from=jjc_fldh" target="_blank"><i class="i-t"></i>推荐品牌</a>
+                            </li>
+                            <li class="fl sub-content last">
+                                <a target="_blank" href="/category-canting/list-b283/?from=jjc_fldh" style="color:#cf000e">木木原</a>
+                                <a target="_blank" href="/category-canting/list-b355/?from=jjc_fldh" style="color:#666;">彼岸阳光</a>
+                                <a target="_blank" href="/category-canting/list-b683/?from=jjc_fldh" style="color:#666;">韩木居</a>
+                                <a target="_blank" href="/category-canting/list-b780/?from=jjc_fldh" style="color:#cf000e">世纪葵花</a>
+                                <a target="_blank" href="/category-canting/list-b655/?from=jjc_fldh" style="color:#666;">恩嘉依</a>
+                                <a target="_blank" href="/category-canting/list-b1237/?from=jjc_fldh" style="color:#666;">槿秀之恋</a>
+                                <a target="_blank" href="/category-canting/list-b1114/?from=jjc_fldh" style="color:#666;">华洛思</a>
+                                <a target="_blank" href="/category-canting/list-b1055/?from=jjc_fldh" style="color:#666;">百合馨香</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <dl class="tlt">
+                        <dt>
+                            <a target="_blank" href="/category-canting/?from=jjc_fldh" title="餐厅家具" class="t"><i class="i-menu i-menu-2"></i>餐厅家具</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="/category-canzhuo/?from=jjc_fldh" title="餐桌" class="t" style="color:#cf000e;font-weight:bold;">餐桌</a>
+                            <a target="_blank" href="/category-canyi/?from=jjc_fldh" title="餐椅" class="t" style="color:#787878;font-weight:normal;">餐椅</a>
+                            <a target="_blank" href="/category-canbiangui/?from=jjc_fldh" title="餐边柜" class="t" style="color:#787878;font-weight:normal;">餐边柜</a>
+                            <a target="_blank" href="/category-cantingtaozhuang/?from=jjc_fldh" title="餐厅套装" class="t" style="color:#787878;font-weight:normal;">餐厅套装</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="map-item">
+                    <div class="sub" style="opacity: 0.8; padding-left: 0px;">
+                            <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-shuzhuogongzuotai/?from=jjc_fldh" target="_blank"><i class="i-t"></i>书桌/工作台</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/shimushuzhuo/?from=jjc_fldh" style="color:#cf000e">实木书桌</a>
+                                <a target="_blank" href="/keywords/zhongshishufangjiaju/?from=jjc_fldh" style="color:#666;">中式书桌</a>
+                                <a target="_blank" href="/keywords/tianyuanshufangjiaju/?from=jjc_fldh" style="color:#666;">田园书桌</a>
+                                <a target="_blank" href="/keywords/bangongzhuo/?from=jjc_fldh" style="color:#666;">办公桌</a>
+                                <a target="_blank" href="/keywords/diannaozhuo/?from=jjc_fldh" style="color:#cf000e">电脑桌</a>
+                                <a target="_blank" href="/keywords/xueshengshuzhuo/?from=jjc_fldh" style="color:#666;">学生书桌</a>
+                                <a target="_blank" href="/category-shufangtaozhuang/?from=jjc_fldh" style="color:#666;">书房套装</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-shugui/?from=jjc_fldh" target="_blank"><i class="i-t"></i>书柜/书架</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/sanmenshugui/?from=jjc_fldh" style="color:#cf000e">三门书柜</a>
+                                <a target="_blank" href="/keywords/simenshugui/?from=jjc_fldh" style="color:#666;">四门书柜</a>
+                                <a target="_blank" href="/keywords/meishishugui/?from=jjc_fldh" style="color:#666;">美式书柜</a>
+                                <a target="_blank" href="/keywords/oushishugui/?from=jjc_fldh" style="color:#666;">欧式书柜</a>
+                                <a target="_blank" href="/keywords/hanshishugui/?from=jjc_fldh" style="color:#666;">韩式书柜</a>
+                                <a target="_blank" href="/keywords/zhongshishugui/?from=jjc_fldh" style="color:#cf000e">中式书柜</a>
+                                <a target="_blank" href="/keywords/shuguizuhe/?from=jjc_fldh" style="color:#666;">转角书柜</a>
+                                <a target="_blank" href="/keywords/shuguishujia/?from=jjc_fldh" style="color:#666;">书柜书架</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-gongzuoyi/?from=jjc_fldh" target="_blank"><i class="i-t"></i>书椅/转椅</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="?from=jjc_fldh" style="color:#666;">书桌椅＝/category-gongzuoyi/</a>
+                                <a target="_blank" href="?from=jjc_fldh" style="color:#666;">电脑椅＝/keywords/diannaoyi/</a>
+                                <a target="_blank" href="cf000e?from=jjc_fldh" style="color:#666;">办公转椅＝/keywords/bangongzhuanyi/</a>
+                                <a target="_blank" href="?from=jjc_fldh" style="color:#666;">田园书椅＝/keywords/tianyuanshuyi/</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/brand/?from=jjc_fldh" target="_blank"><i class="i-t"></i>推荐品牌</a>
+                            </li>
+                            <li class="fl sub-content last">
+                                <a target="_blank" href="/category-shufang/list-b111/?from=jjc_fldh" style="color:#666;">韩菲尔</a>
+                                <a target="_blank" href="/category-shufang/list-b457/?from=jjc_fldh" style="color:#cf000e">慕娅</a>
+                                <a target="_blank" href="/category-shufang/list-b554/?from=jjc_fldh" style="color:#666;">法兰西玫瑰</a>
+                                <a target="_blank" href="/category-shufang/list-b283/?from=jjc_fldh" style="color:#666;">木木原</a>
+                                <a target="_blank" href="/category-shufang/list-b896/?from=jjc_fldh" style="color:#666;">圣欧顿</a>
+                                <a target="_blank" href="/category-shufang/list-b1130/?from=jjc_fldh" style="color:#666;">爵范</a>
+                                <a target="_blank" href="/category-shufang/list-b871/?from=jjc_fldh" style="color:#666;">槿秀家园</a>
+                                <a target="_blank" href="/category-shufang/list-b813/?from=jjc_fldh" style="color:#666;">爱迪</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <dl class="tlt">
+                        <dt>
+                            <a target="_blank" href="/category-shufang/?from=jjc_fldh" title="书房家具" class="t"><i class="i-menu i-menu-3"></i>书房家具</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="/category-shuzhuogongzuotai/?from=jjc_fldh" title="书桌/书台" class="t" style="color:#787878;font-weight:normal;">书桌/书台</a>
+                            <a target="_blank" href="/category-shugui/?from=jjc_fldh" title="书柜/书架" class="t" style="color:#cf000e;font-weight:bold;">书柜/书架</a>
+                            <a target="_blank" href="/category-shufangtaozhuang/?from=jjc_fldh" title="书房套装" class="t" style="color:#787878;font-weight:normal;">书房套装</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="map-item">
+                    <div class="sub" style="opacity: 0.8; padding-left: 0px;">
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-ertongchuang/?from=jjc_fldh" target="_blank"><i class="i-t"></i>儿童床</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/keywords/shimuertongchuang/?from=jjc_fldh" style="color:#cf000e">实木儿童床</a>
+                                <a target="_blank" href="/keywords/tianyuanertongchuang/?from=jjc_fldh" style="color:#666;">田园儿童床</a>
+                                <a target="_blank" href="/keywords/shangxiachuang/?from=jjc_fldh" style="color:#666;">上下床</a>
+                                <a target="_blank" href="/keywords/gaodichuang/?from=jjc_fldh" style="color:#666;">高低床</a>
+                                <a target="_blank" href="/keywords/shuangcengchuang/?from=jjc_fldh" style="color:#cf000e">双层床</a>
+                                <a target="_blank" href="/keywords/etzmc/?from=jjc_fldh" style="color:#666;">儿童母子床</a>
+                                <a target="_blank" href="/keywords/ertongduogongnengchuang/?from=jjc_fldh" style="color:#666;">儿童多功能床</a>
+                                <a target="_blank" href="/keywords/tongchuang/?from=jjc_fldh" style="color:#666;">童床</a>
+                            </li>
+                        </ul>
+                         <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-ertongchuangdian/?from=jjc_fldh" target="_blank"><i class="i-t"></i>儿童床垫</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-ertongchuangdian/list-79_20150/?from=jjc_fldh" style="color:#666;">儿童棕垫</a>
+                                <a target="_blank" href="/category-ertongchuangdian/list-79_20153/?from=jjc_fldh" style="color:#666;">弹簧床垫</a>
+                                <a target="_blank" href="/category-ertongchuangdian/list-79_20149/?from=jjc_fldh" style="color:#cf000e">乳胶垫</a>
+                                <a target="_blank" href="/keywords/danrenchuangdian/?from=jjc_fldh" style="color:#666;">单人床垫</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-ertongyigui/?from=jjc_fldh" target="_blank"><i class="i-t"></i>儿童柜类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-ertongchuangtougui/?from=jjc_fldh" style="color:#666;">儿童床头柜</a>
+                                <a target="_blank" href="/category-ertongyigui/?from=jjc_fldh" style="color:#666;">儿童衣柜</a>
+                                <a target="_blank" href="/keywords/ertongshugui/?from=jjc_fldh" style="color:#666;">儿童书柜</a>
+                                <a target="_blank" href="/category-ertonggui/?from=jjc_fldh" style="color:#666;">多用柜</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-ertongshuzhuoertongdiannaotai/?from=jjc_fldh" target="_blank"><i class="i-t"></i>儿童桌/椅</a>
+                            </li>
+                            <li class="fl sub-content">
+	                            <a target="_blank" href="/keywords/ertongshutai/?from=jjc_fldh" style="color:#666;">儿童书台</a>
+	                            <a target="_blank" href="/keywords/ertongdiannaozhuo/?from=jjc_fldh" style="color:#cf000e">儿童电脑桌</a>
+	                            <a target="_blank" href="/keywords/xueshengzhuo/?from=jjc_fldh" style="color:#666;">学生桌</a>
+	                            <a target="_blank" href="/keywords/ertongzhuo/?from=jjc_fldh" style="color:#666;">儿童桌</a>
+	                            <a target="_blank" href="/category-ertongyi/?from=jjc_fldh" style="color:#666;">儿童椅</a>
+	                            <a target="_blank" href="/keywords/ertongzhuanyi/?from=jjc_fldh" style="color:#666;">儿童转椅</a>
+	                        </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/brand/?from=jjc_fldh" target="_blank"><i class="i-t"></i>推荐品牌</a>
+                            </li>
+                            <li class="fl sub-content last">
+                                <a target="_blank" href="/category-ertongfang/list-b357/?from=jjc_fldh" style="color:#666;">青春城堡</a>
+                                <a target="_blank" href="/category-ertongfang/list-b284/?from=jjc_fldh" style="color:#666;">小童舍</a>
+                                <a target="_blank" href="/category-ertongfang/list-b601/?from=jjc_fldh" style="color:#666;">苏玫尔</a>
+                                <a target="_blank" href="/category-ertongfang/list-b653/?from=jjc_fldh" style="color:#666;">木彩</a>
+                                <a target="_blank" href="/category-ertongfang/list-b1254/?from=jjc_fldh" style="color:#666;">陶陶居</a>
+                                <a target="_blank" href="/category-ertongfang/list-b1067/?from=jjc_fldh" style="color:#cf000e">喜临门•红孩儿</a>
+                                <a target="_blank" href="/category-ertongfang/list-b1227/?from=jjc_fldh" style="color:#666;">百合天使</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <dl class="tlt">
+                        <dt>
+                            <a target="_blank" href="/category-ertongfang/?from=jjc_fldh" title="儿童家具" class="t"><i class="i-menu i-menu-4"></i>儿童家具</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="/category-ertongchuang/?from=jjc_fldh" title="儿童床" class="t" style="color:#cf000e;font-weight:bold;">儿童床</a>
+                            <a target="_blank" href="/category-ertongyigui/?from=jjc_fldh" title="儿童衣柜" class="t" style="color:#787878;font-weight:normal;">儿童衣柜</a>
+                            <a target="_blank" href="/category-ertongyi/?from=jjc_fldh" title="儿童椅" class="t" style="color:#787878;font-weight:normal;">儿童椅</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="map-item">
+                    <div class="sub" style="opacity: 1; padding-left: 10px;">
+                                                <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-huwaijiaju//?from=jjc_fldh" target="_blank"><i class="i-t"></i>户外桌/椅</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="category-xiuxianzhuo/?from=jjc_fldh" style="color:#666;">户外桌</a>
+                                <a target="_blank" href="/keywords/xiuxianzhuo/?from=jjc_fldh" style="color:#666;">休闲桌</a>
+                                <a target="_blank" href="/keywords/yangtaijiaju/?from=jjc_fldh" style="color:#666;">阳台家具</a>
+                                <a target="_blank" href="/keywords/hwxxjj/?from=jjc_fldh" style="color:#cf000e">户外休闲家具</a>
+                                <a target="_blank" href="/category-xiuxianyi/?from=jjc_fldh" style="color:#666;">户外椅</a>
+                                <a target="_blank" href="/keywords/xiuxianyi/?from=jjc_fldh" style="color:#666;">休闲椅</a>
+                                <a target="_blank" href="/keywords/tengzhuoyi/?from=jjc_fldh" style="color:#cf000e">藤桌椅</a>
+                                <a target="_blank" href="/category-yaoyi/?from=jjc_fldh" style="color:#666;">摇椅</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-huwaijiaju/?from=jjc_fldh" target="_blank"><i class="i-t"></i>户外套装</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-huwaitaozhuang/?from=jjc_fldh" style="color:#666;">休闲套装</a>
+                                <a target="_blank" href="/keywords/huwaizhuoyi/?from=jjc_fldh" style="color:#666;">户外桌椅</a>
+                                <a target="_blank" href="/category-huwaitaozhuang/list-m309/?from=jjc_fldh" style="color:#cf000e">藤艺套装</a>
+                                <a target="_blank" href="/keywords/hyjj/?from=jjc_fldh" style="color:#666;">花园家具</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-bangongjiaju/?from=jjc_fldh" target="_blank"><i class="i-t"></i>办公桌/椅</a>
+                            </li>
+                            <li class="fl sub-content">
+	                            <a target="_blank" href="/category-bangongzhuo/?from=jjc_fldh" style="color:#cf000e">办公桌</a>
+	                            <a target="_blank" href="/category-bangongzhuo/list-79_20143/，大班台?from=jjc_fldh" style="color:#/category-bangongzhuo/list-79_20142/">会议台</a>
+	                            <a target="_blank" href="/category-bangongyi/?from=jjc_fldh" style="color:#666;">办公椅</a>
+	                            <a target="_blank" href="/category-bangongyi/list-79_20140/?from=jjc_fldh" style="color:#666;">会议椅</a>
+	                            <a target="_blank" href="/category-bangongyi/list-79_20139/?from=jjc_fldh" style="color:#666;">大班椅</a>
+	                            <a target="_blank" href="/keywords/bangongzhuoyi/?from=jjc_fldh" style="color:#666;">办公桌椅</a>
+	                        </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-bangongjiaju/?from=jjc_fldh" target="_blank"><i class="i-t"></i>办公沙发</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-bangongshafa/?from=jjc_fldh" style="color:#cf000e">办公沙发</a>
+                                <a target="_blank" href="/category-bangongshafa/list-m354/?from=jjc_fldh" style="color:#666;">皮艺沙发</a>
+                                <a target="_blank" href="/category-bangongshafa/list-m308?from=jjc_fldh" style="color:#666;">布艺沙发</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/category-huwaijiaju/?from=jjc_fldh" target="_blank"><i class="i-t"></i>更多分类</a>
+                            </li>
+                            <li class="fl sub-content">
+                                <a target="_blank" href="/category-diaolan/?from=jjc_fldh" style="color:#cf000e">吊篮/吊椅</a>
+                                <a target="_blank" href="/category-zhediechuang/?from=jjc_fldh" style="color:#666;">折叠床</a>
+                                <a target="_blank" href="/category-qiuqian/?from=jjc_fldh" style="color:#666;">秋千</a>
+                                <a target="_blank" href="/category-wenjiangui/?from=jjc_fldh" style="color:#666;">文件柜</a>
+                            </li>
+                        </ul>
+                        <ul class="sub-group clearfix">
+                            <li class="fl sub-title">
+                                <a href="/brand/?from=jjc_fldh" target="_blank"><i class="i-t"></i>推荐品牌</a>
+                            </li>
+                            <li class="fl sub-content last">
+                                <a target="_blank" href="/category-huwaitaozhuang/list-b534/?from=jjc_fldh" style="color:#666;">百花园</a>
+                                <a target="_blank" href="/category-huwaitaozhuang/list-b384/?from=jjc_fldh" style="color:#666;">丰舍</a>
+                                <a target="_blank" href="/category-huwaitaozhuang/list-b530/?from=jjc_fldh" style="color:#666;">七欧</a>
+                                <a target="_blank" href="/category-bangongjiaju/list-b328/?from=jjc_fldh" style="color:#666;">慧乐家</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <dl class="tlt">
+                        <dt>
+                            <a target="_blank" href="/category-huwaijiaju/?from=jjc_fldh" title="户外/办公" class="t"><i class="i-menu i-menu-5"></i>户外/办公</a>
+                        </dt>
+                        <dd>
+                            <a target="_blank" href="/category-xiuxianzhuo/?from=jjc_fldh" title="户外桌" class="t" style="color:#787878;font-weight:normal;">户外桌</a>
+                            <a target="_blank" href="/category-diaolan/?from=jjc_fldh" title="吊篮/吊椅" class="t" style="color:#787878;font-weight:normal;">吊篮/吊椅</a>
+                            <a target="_blank" href="/category-bangongzhuo/?from=jjc_fldh" title="办公桌" class="t" style="color:#cf000e;font-weight:bold;">办公桌</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <ul class="navigator">
+            <li><a target="_blank" href="/hongbao/?from=menu" title="红包超市">红包超市</a></li>
+            <li class="current"><a href="/jiaju/" target="_self" title="家具城">家具城</a></li>
+            <li><a target="_blank" href="/jiancai/" title="建材城">建材城</a></li>
+            <li id="JS_mll_head_menu_sp"><a target="_blank" href="/shipin/" title="家居家饰">家居家饰</a></li>
+            <li id="JS_mll_head_menu_dz" style="display:none;"></li>
+            <li><a target="_blank" href="/tuangou/" title="团购">团购</a></li>
+            <li><a id="JS_mll_head_menu_expr" target="_blank" href="/hangzhou/expr.html" title="体验馆">体验馆<img src="http://image.meilele.com/images/common/site/hot.gif"></a></li>
+            <li><a target="_blank" href="/xspace/" title="客户晒家">晒家</a></li>
+            <li><a target="_blank" href="http://zx.meilele.com/" title="装修网">装修网</a></li>
+            <li><a target="_blank" href="/tljj/" title="图览家居">图览家居</a></li>
+        </ul>
+    </div>
+  </div>
+	
+	<!--
+    	作者：bucketcheng@gmail.com
+    	时间：2016-12-01
+    	描述：goods titile
+    -->
+	<div class="cat-link-bg">
+	<div class="w cat-link-new" id="JS_cat_nav">
+		<ul class="bread-nav">
+			<li class="bitem"><a class="bread-link" href="/" target="_blank" title="首页">首页</a><i class="arrow-r"></i></li>
+			<li class="bitem"><a class="bread-link" href="/jiaju/" target="_blank" title="家具城">家具</a><i class="arrow-r"></i></li>												<li class="bitem">
+				<a class="drop-tit" href="/category-keting/" target="_blank" title="客厅">客厅<i class="arrow-d"></i></a>
+					<div class="bread-drop">
+						<a href="/category-wofang/" target="_blank" title="卧室">卧室</a>
+						<a href="/category-keting/" target="_blank" title="客厅">客厅</a>
+						<a href="/category-canting/" target="_blank" title="餐厅">餐厅</a>
+						<a href="/category-shufang/" target="_blank" title="书房">书房</a>
+						<a href="/category-ertongfang/" target="_blank" title="儿童房">儿童房</a>
+						<a href="/category-huwaijiaju/" target="_blank" title="户外/阳台">户外/阳台</a>
+						<a href="/category-bangongjiaju/" target="_blank" title="办公家具">办公家具</a>
+					<br>									
+					</div>
+					<i class="arrow-r"></i>
+			</li>
+			<li class="bitem">
+			<a class="drop-tit" href="/category-shafa/" target="_blank" title="沙发">沙发<i class="arrow-d"></i></a>
+			<div class="bread-drop">
+				<a href="/category-shafa/" target="_blank" title="沙发">沙发</a>
+					<a href="/category-chajihebianzhuo/" target="_blank" title="茶几/边桌">茶几/边桌</a>
+					<a href="/category-dianshigui/" target="_blank" title="电视柜">电视柜</a>
+					<a href="/category-xiegui/" target="_blank" title="鞋柜">鞋柜</a>
+					<a href="/category-huajia/" target="_blank" title="花架/装饰架">花架/装饰架</a>
+					<a href="/category-duoyonggui/" target="_blank" title="酒柜/装饰柜">酒柜/装饰柜</a>
+					<a href="/category-jiantinggui/" target="_blank" title="间厅/玄关柜">间厅/玄关柜</a>
+					<br>										
+					<a href="/category-ketingtaofang/" target="_blank" title="客厅套装">客厅套装</a>
+					<a href="/category-denglei/" target="_blank" title="休闲椅/凳">休闲椅/凳</a>
+					<a href="/category-pingfeng/" target="_blank" title="屏风">屏风</a>
+			</div>
+			<i class="arrow-r"></i>
+			</li>
+			<li class="bitem" style="color:#777;">KSHT-AD-905-SFTZ</li>
+		</ul>
+		<div class="activity"><a href="http://www.meilele.com/new_products.html?from=xqy_flbq" target="_blank" title="新品">新品</a><em></em><a href="http://www.meilele.com/tuangou/?from=xqy_flbq" target="_blank" title="团购">团购</a><em></em><a href="http://www.meilele.com/paimai/?from=xqy_flbq" target="_blank" title="拍卖">拍卖</a></div>
+	</div>
+	</div>
+
+	<!-- -->
+	<div id="jsWebFestivalDressUp" class="w" style="position:relative;">
+	</div>
+
+	<!--
+		作者：bucketcheng@gmail.com
+		时间：2016-12-01
+		描述：商品购买
+	-->
+	<div class="w  clearfix" style="margin-top:18px;">
+	
+	<div class="goods-display goods-display-new Left">
+	
+	<div class="slide" data-total="7">
+		<div id="jqGalleryBox" class="stage"><a id="JS_scale_src" target="_blank" href="http://image.meilele.com/images/small/343/width/1024/height/678/mode/1/encrypt/a78739343ebe8b670aeb4362868e1e5a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOUsXHqBBurzmyhNvi8ENg1msLUwr5PXE0hapiqhBMpdg==.jpg" class="jqzoom"><img src="http://image.meilele.com/images/small/532/width/520/height/344/mode/1/encrypt/c14b55b5b13def86ed1697773287f58e/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvb+AaLrjjuhx163aoald53R0rPTkfqcnrUyIdZy1IuA.jpg" limg="http://image.meilele.com/images/small/477/width/1024/height/678/mode/1/encrypt/5cc45c5495a4e8496f99c6f977b0b033/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvb+AaLrjjuhx163aoald53R0rPTkfqcnrUyIdZy1IuA.jpg" width="470" height="313" id="JS_goods_album_display" alt=""></a>
+						 
+		</div>
+				<div class="thumb">
+						<div id="JS_goods_album_btn" class="arrow" data-step="108"><a href="javascript:;" class="prev"></a><a href="javascript:;" class="next"></a></div>
+						<div class="table">
+				<ul id="JS_goods_album_stage" class="clearfix">
+										<li class="album_item"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/427/width/108/height/72/mode/1/encrypt/110788c7a2584d15d4cef256fed3dea1/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOUsXHqBBurzmyhNvi8ENg1msLUwr5PXE0hapiqhBMpdg==.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/197/width/520/height/344/mode/1/encrypt/0d79702085236ff59caed8b21afb10b9/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOUsXHqBBurzmyhNvi8ENg1msLUwr5PXE0hapiqhBMpdg==.jpg" data-zoom_img="http://image.meilele.com/images/small/343/width/1024/height/678/mode/1/encrypt/a78739343ebe8b670aeb4362868e1e5a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOUsXHqBBurzmyhNvi8ENg1msLUwr5PXE0hapiqhBMpdg==.jpg"></li>
+										<li class="album_item  current"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/350/width/108/height/72/mode/1/encrypt/3ec0a87f4373ebf77d2a8586bc590536/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvb+AaLrjjuhx163aoald53R0rPTkfqcnrUyIdZy1IuA.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/532/width/520/height/344/mode/1/encrypt/c14b55b5b13def86ed1697773287f58e/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvb+AaLrjjuhx163aoald53R0rPTkfqcnrUyIdZy1IuA.jpg" data-zoom_img="http://image.meilele.com/images/small/477/width/1024/height/678/mode/1/encrypt/5cc45c5495a4e8496f99c6f977b0b033/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvb+AaLrjjuhx163aoald53R0rPTkfqcnrUyIdZy1IuA.jpg"></li>
+										<li class="album_item"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/358/width/108/height/72/mode/1/encrypt/733ba7c64402e055d9b5daf6cd4df625/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhrEo8cQdJ6xdYifvD8CnItCBzl_gjxYa2V7qWrUgJFsr.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/222/width/520/height/344/mode/1/encrypt/5d018d0efd890fbae693ec3a6d512c62/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhrEo8cQdJ6xdYifvD8CnItCBzl_gjxYa2V7qWrUgJFsr.jpg" data-zoom_img="http://image.meilele.com/images/small/325/width/1024/height/678/mode/1/encrypt/ac4cb39bfbf3b80c5265f7c5ce8ea52e/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhrEo8cQdJ6xdYifvD8CnItCBzl_gjxYa2V7qWrUgJFsr.jpg"></li>
+										<li class="album_item"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/423/width/108/height/72/mode/1/encrypt/829ce518aabd420f08ec31b789a5d3b3/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhjyLmeNq5XTSF44RTz+AwGtEtlh6pcG7HL+UZltUdkiX.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/404/width/520/height/344/mode/1/encrypt/04bfe64ce1ed9b630005df4c8996b07a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhjyLmeNq5XTSF44RTz+AwGtEtlh6pcG7HL+UZltUdkiX.jpg" data-zoom_img="http://image.meilele.com/images/small/316/width/1024/height/678/mode/1/encrypt/ec4f289ed31c19719ccd4999fcc65daa/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhjyLmeNq5XTSF44RTz+AwGtEtlh6pcG7HL+UZltUdkiX.jpg"></li>
+										<li class="album_item"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/103/width/108/height/72/mode/1/encrypt/bb01f55a93b717b2fad111f9f07ffc3b/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhtx2zeJrniD+qJ_ySyswLdWBgxOybv7pLvBudVrTnslc.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/180/width/520/height/344/mode/1/encrypt/3b5627639dbd64590fd78c675143ccd0/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhtx2zeJrniD+qJ_ySyswLdWBgxOybv7pLvBudVrTnslc.jpg" data-zoom_img="http://image.meilele.com/images/small/162/width/1024/height/678/mode/1/encrypt/37a111399342184a3b30cdf297ef9959/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhtx2zeJrniD+qJ_ySyswLdWBgxOybv7pLvBudVrTnslc.jpg"></li>
+										<li class="album_item"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/275/width/108/height/72/mode/1/encrypt/7c7344b0dd1800bff4106e7dca2e3050/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhkKVdu1S_Fltzb7sPorMvnALDNTPM9KwBPKbzWlkxi_0.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/482/width/520/height/344/mode/1/encrypt/a5dc171d7d528ff83c26475c7dcb4620/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhkKVdu1S_Fltzb7sPorMvnALDNTPM9KwBPKbzWlkxi_0.jpg" data-zoom_img="http://image.meilele.com/images/small/370/width/1024/height/678/mode/1/encrypt/17435edf0cca564e58ece6879a380482/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhkKVdu1S_Fltzb7sPorMvnALDNTPM9KwBPKbzWlkxi_0.jpg"></li>
+										<li class="album_item"><a href="javascript:;"></a><img src="http://image.meilele.com/images/small/170/width/108/height/72/mode/1/encrypt/42c1e9c0581f3c6cd49e0c6649082408/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvyKeEHT7qh0Ev76auroFyXXrnurnQSVgVoMYk31DzRw.jpg" width="98" height="65" data-show_img="http://image.meilele.com/images/small/227/width/520/height/344/mode/1/encrypt/cc27374fff654781c6c2eb6ede5bcd4a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvyKeEHT7qh0Ev76auroFyXXrnurnQSVgVoMYk31DzRw.jpg" data-zoom_img="http://image.meilele.com/images/small/228/width/1024/height/678/mode/1/encrypt/41666ac615be4f5d9529752d4832133c/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNx2G004Fe6Dj7_vISeEKhhvuKCXCjtcYbhB4fG+GWkhvyKeEHT7qh0Ev76auroFyXXrnurnQSVgVoMYk31DzRw.jpg"></li>
+									</ul>
+				<script type="text/javascript">
+					var _$_ = function(id){return document.getElementById(id)},
+						showImgDom = _$_('JS_goods_album_display'),
+						firstThumb = _$_('JS_goods_album_stage').getElementsByTagName('img')[0].getAttribute('data-show_img'),
+						newImg = new Image();
+					newImg.src = firstThumb;
+					newImg.onload = function(){showImgDom.src = newImg.src;}
+				</script>
+			</div>
+		</div>
+			</div>
+	
+
+	<ul class="extra clearfix">
+		<li class="share">
+			<div id="bdshare" class="Left bdshare_t bds_tools get-codes-bdshare">
+			<div class="bds_more extra_field share_bd">
+				<span class="icon">分享</span>
+			</div></div>
+		</li>
+		<li id="JS_collect_this_goods" class="collect"><a href="javascript:;" class="icon">收藏商品</a></li>
+		<!-- <li class="video"><span class="icon">查看视频</span></li> -->
+	</ul>
+	
+	<div id="JS_expr_goods_display" class="expr-relative clearfix" style=""><div class="face"><div id="JS_expr_goods_text" class="bg" style="cursor:pointer;">全国<b>322</b>家体验馆</div><a href="javascript:;" title="免费发送地址到手机" id="JS_expr_goods_img"><img src="http://image.meilele.com/images/201503/1427140255069111752.png" alt=""></a></div><div class="info"><h4>体验馆展品：</h4><p>您可以到<a href="http://www.meilele.com/hangzhou/expr.html" target="_blank" title="">杭州7家体验馆</a>看展品 <em class="map"></em><a href="javascript:;" target="_blank" id="JS_expr_goods_sms_2" title="查看地图">查看地图</a></p><div class="expr"><table><tbody><tr><td><div class="list"><div id="JS_expr_goods_stage" class="stage"><a href="javascript:;" title="下城区体验馆" onclick="$.codeSms(105, {click:'新版商品详情页_下城区体验馆点击', 'postionCode':'mll_gdetail1'});">下城区体验馆</a><a href="javascript:;" title="富阳市体验馆" onclick="$.codeSms(260, {click:'新版商品详情页_富阳市体验馆点击', 'postionCode':'mll_gdetail1'});">富阳市体验馆</a><a href="javascript:;" title="临安市体验馆" onclick="$.codeSms(277, {click:'新版商品详情页_临安市体验馆点击', 'postionCode':'mll_gdetail1'});">临安市体验馆</a><a href="javascript:;" title="桐庐体验馆" onclick="$.codeSms(278, {click:'新版商品详情页_桐庐体验馆点击', 'postionCode':'mll_gdetail1'});">桐庐体验馆</a><a href="javascript:;" title="滨江区体验馆" onclick="$.codeSms(262, {click:'新版商品详情页_滨江区体验馆点击', 'postionCode':'mll_gdetail1'});">滨江区体验馆</a><a href="javascript:;" title="西湖区体验馆" onclick="$.codeSms(499, {click:'新版商品详情页_西湖区体验馆点击', 'postionCode':'mll_gdetail1'});">西湖区体验馆</a><a href="javascript:;" title="余杭区体验馆" onclick="$.codeSms(502, {click:'新版商品详情页_余杭区体验馆点击', 'postionCode':'mll_gdetail1'});">余杭区体验馆</a></div></div></td><td><div id="JS_expr_goods_arrow" class="arrow"><a href="javascript::" class="up"></a><a href="javascript::" class="down current_down"></a></div></td></tr></tbody></table></div><a href="javascript:;" class="sms" title="免费发送地址到手机" id="JS_expr_goods_sms"></a></div></div>
+</div>
+	
+	
+	<div id="JS_goods_info_panel" class="goods-panel goods-panel-new">
+	<div class="title">
+		<h4 class="main-title"><a href="/brand-241/" target="_blank">[凯撒豪庭]</a> <a href="/category-shafa/mcat0-scat294-b0-max0-min0-city00-rt0-attr-page-1-sort-sort_order-order-asc.html" target="_blank">美式田园</a> 纯正美式乡村格调 皮布沙发组合（1+2+3）高档油蜡头层黄牛皮 <span class="sn">编号：KSHT-AD-905-SFTZ</span></h4>
+		<h4 id="JS_goods_sub_title" class="sub-title">摒弃繁琐与奢华，崇尚随性自然，以庞大厚重的体态造型设计，优质讲究的材料搭配制作工艺，精心打造纯正地道美式乡村家居，向您传递生活的舒适与自由！</h4>
+	</div>
+	<a class="goods_ad" id="JS_goods_ad" href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=banner#JS_img_10" target="_blank" title="12.12岁末家具盛宴！" style=""><img src="http://image.meilele.com/images/201611/1480273020924853194.jpg" width="100%"></a>
+	<ul class="price"> 
+					<li class="price-att1">
+				<table style="width:100%"><tbody><tr> 
+					<td class="tit"><span id="JS_effect_price_type">促销价</span></td>
+					<td>
+						<strong class="yen">¥</strong><strong id="JS_effect_price" class="gnum">21888.00</strong>
+						<a href="javascript:;" class="orange cut-note JS_prict_cut">降价通知</a>
+						<span class="shop-price">本站价&nbsp;:&nbsp;<del class="mt">¥23460.00</del></span>					</td>
+					<td class="sale-num">
+						<span class="line"></span>
+						<p>
+							<a href="javascript:void(0);" class="mt JS_jump" data-key="jilu">已售 <span id="JS_goods_saled_number" class="orange">299</span></a><br>
+							<a href="javascript:void(0);" class="mt JS_jump" data-key="pingjia">评价 <span id="JS_goods_comment_number" class="blue">1</span></a>
+						</p>
+					</td>
+				</tr></tbody></table>
+			</li>
+			<li class="cart-act-info" id="JS_cart_activity_box" style="display: list-item;"><div><i></i>满额送活动商品已购<span class="red">2710</span>元，购买此商品，共可送<span class="red">3300</span>元</div></li>
+			<li class="act-block" id="JS_goods_activity_box" style="display: list-item;">
+				<div class="act-block-in"><table id="JS_goods_activity_container"><tbody><tr><td class="tit"><span>促销</span></td><td><span class="label">满额送家具</span><a href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=hdbt" target="_blank" class="link">满10000送1500，包送包安装！ </a><a href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=hdbt" class="link" target="_blank">详情&gt;&gt;</a></td><td width="79"><span class="JS_upfold" style="cursor:pointer;">共<span class="red">2</span>项促销<i class="arrow-d"></i></span></td></tr><tr><td></td><td colspan="2"><span class="label">促销</span><span class="red">限时促销&nbsp;&nbsp;</span><span class="count-down"><span class="JS_count_down_tag" data-format="<span>$D</span>天<span>$H</span>时<span>$M</span>分<span>$S</span>秒" data-lefttime="1481990400" id="count_down_OoO_0"><span>16</span>天<span>07</span>时<span>40</span>分<span>14</span>秒</span>后结束</span></td></tr></tbody></table></div>
+			</li>
+						<li class="coupon-pre">
+				<table><tbody><tr>
+					<td class="tit"><span>领券</span></td>
+																<td><a href="javascript:void(0);" class="bonus-tag JS_presell_bonus" data-keyid="" data-key="308903|16325|20|200"><span>200元红包</span><i class="after"></i></a></td>
+														</tr></tbody></table>
+			</li>
+						</ul>
+
+	
+
+	<div class="table">
+				<dl class="trans-fee clearfix">
+	<dt>配送</dt>
+	<dd>
+		<div class="peisong clearfix">
+			<div class="clearfix Left">
+				 
+				<div class="address Left" style="margin-bottom:2px;padding: 1px 10px 2px 0;">
+					<div class="JS_area_select_show" style="cursor:pointer;"><span id="JS_peisong_address_nav" class="txt">浙江杭州上城区上城区</span><i></i></div>
+					<div class="areaPanel JS_area_select_list" style="display: none;">
+						<a href="javascript:void(0);" class="close">×</a>
+						<div class="header">
+							<ul id="JS_area_select_header" class="clearfix">
+								<li class="province"><span class="text">浙江</span><span class="arrow"></span></li>
+								<li class="city"><span class="text">杭州</span><span class="arrow"></span></li>
+								<li class="district"><span class="text">上城区</span><span class="arrow"></span></li>
+								<li class="customDistrict cur"><span class="text">上城区</span><span class="arrow"></span></li>
+							</ul>
+						</div>
+						<div id="JS_area_select_list" class="areaList">
+							<ul class="province none">
+																<li><a href="javascript:void(0);" data-region_id="2" class="prov">北京</a></li>
+																<li><a href="javascript:void(0);" data-region_id="3" class="prov">天津</a></li>
+																<li><a href="javascript:void(0);" data-region_id="4" class="prov">河北</a></li>
+																<li><a href="javascript:void(0);" data-region_id="5" class="prov">山西</a></li>
+																<li><a href="javascript:void(0);" data-region_id="6" class="prov">内蒙古</a></li>
+																<li><a href="javascript:void(0);" data-region_id="7" class="prov">辽宁</a></li>
+																<li><a href="javascript:void(0);" data-region_id="8" class="prov">吉林</a></li>
+																<li><a href="javascript:void(0);" data-region_id="9" class="prov">黑龙江</a></li>
+																<li><a href="javascript:void(0);" data-region_id="10" class="prov">上海</a></li>
+																<li><a href="javascript:void(0);" data-region_id="11" class="prov">江苏</a></li>
+																<li><a href="javascript:void(0);" data-region_id="12" class="prov">浙江</a></li>
+																<li><a href="javascript:void(0);" data-region_id="13" class="prov">安徽</a></li>
+																<li><a href="javascript:void(0);" data-region_id="14" class="prov">福建</a></li>
+																<li><a href="javascript:void(0);" data-region_id="15" class="prov">江西</a></li>
+																<li><a href="javascript:void(0);" data-region_id="16" class="prov">山东</a></li>
+																<li><a href="javascript:void(0);" data-region_id="17" class="prov">河南</a></li>
+																<li><a href="javascript:void(0);" data-region_id="18" class="prov">湖北</a></li>
+																<li><a href="javascript:void(0);" data-region_id="19" class="prov">湖南</a></li>
+																<li><a href="javascript:void(0);" data-region_id="20" class="prov">广东</a></li>
+																<li><a href="javascript:void(0);" data-region_id="21" class="prov">广西</a></li>
+																<li><a href="javascript:void(0);" data-region_id="22" class="prov">海南</a></li>
+																<li><a href="javascript:void(0);" data-region_id="23" class="prov">重庆</a></li>
+																<li><a href="javascript:void(0);" data-region_id="24" class="prov">四川</a></li>
+																<li><a href="javascript:void(0);" data-region_id="25" class="prov">贵州</a></li>
+																<li><a href="javascript:void(0);" data-region_id="26" class="prov">云南</a></li>
+																<li><a href="javascript:void(0);" data-region_id="27" class="prov">西藏</a></li>
+																<li><a href="javascript:void(0);" data-region_id="28" class="prov">陕西</a></li>
+																<li><a href="javascript:void(0);" data-region_id="29" class="prov">甘肃</a></li>
+																<li><a href="javascript:void(0);" data-region_id="30" class="prov">青海</a></li>
+																<li><a href="javascript:void(0);" data-region_id="31" class="prov">宁夏</a></li>
+																<li><a href="javascript:void(0);" data-region_id="32" class="prov">新疆</a></li>
+															</ul>
+							<ul class="city none"><li><a data-region_id="124">杭州</a></li><li><a data-region_id="125">宁波</a></li><li><a data-region_id="126">温州</a></li><li><a data-region_id="127">嘉兴</a></li><li><a data-region_id="128">湖州</a></li><li><a data-region_id="129">绍兴</a></li><li><a data-region_id="130">金华</a></li><li><a data-region_id="131">衢州</a></li><li><a data-region_id="132">舟山</a></li><li><a data-region_id="133">台州</a></li><li><a data-region_id="134">丽水</a></li><li><a data-region_id="427">乐清</a></li></ul>
+							<ul class="district none"><li><a href="javascript:;" data-region_id="14021">上城区</a></li><li><a href="javascript:;" data-region_id="14022">下城区</a></li><li><a href="javascript:;" data-region_id="14023">江干区</a></li><li><a href="javascript:;" data-region_id="14024">拱墅区</a></li><li><a href="javascript:;" data-region_id="14025">西湖区</a></li><li><a href="javascript:;" data-region_id="14026">滨江区</a></li><li><a href="javascript:;" data-region_id="14027">余杭区</a></li><li><a href="javascript:;" data-region_id="14028">桐庐县</a></li><li><a href="javascript:;" data-region_id="14029">淳安县</a></li><li><a href="javascript:;" data-region_id="14030">建德市</a></li><li><a href="javascript:;" data-region_id="14031">富阳</a></li><li><a href="javascript:;" data-region_id="14032">临安</a></li><li><a href="javascript:;" data-region_id="14033">萧山区</a></li></ul>
+							<ul class="customDistrict"><li><a data-region_id="14021">上城区</a></li></ul>
+						</div>
+					</div>
+				</div> 
+			</div>
+			<div class="Left" style="white-space:nowrap;">
+								<span id="JS_goods_no_peisong_text" class="red" style="display:none;"></span>
+				<span id="JS_goods_attr_label_1" class="" style="white-space: nowrap; display: inline-block;">
+					<span id="JS_goods_extend_attr" class="label tran-label" style="">现货</span>
+					<a href="/article_cat-23/article-10135.html" target="_blank" id="JS_goods_limit_day" class="JS_show_tip onTime" data-type="limit-day" data-direction="down" style="display:none;"><i></i><span></span></a>
+				</span>
+								<span id="JS_goods_trans_type" style="display:inline-block"><span class="tran-label2 JS_show_tip" data-type="trans-fee" data-direction="up">免运费</span></span>
+							</div>
+		</div>
+		<p id="JS_goods_extend_attr_3">该商品由 <span class="orange">美乐乐 </span> 发货，并提供售后服务<span class="JS_goods_extent_txt" style="">，预计付款后15天发货</span></p> 
+		<p id="JS_goods_attr_label_2" class="none" style="display: none;"></p>
+	</dd>
+</dl>		
+				<dl class="diff clearfix" id="JS_goods_attr_attr">
+			<dt>类型</dt>
+			<dd><a itemname="1+2+3沙发套装" itemtype="type" href="javascript:;" class="opt-item opt current">1+2+3沙发套装<i></i></a><a itemname="单人位沙发" itemtype="type" href="javascript:;" class="opt-item opt">单人位沙发<i></i></a><a itemname="双人位沙发" itemtype="type" href="javascript:;" class="opt-item opt">双人位沙发<i></i></a><a itemname="三人位沙发" itemtype="type" href="javascript:;" class="opt-item opt">三人位沙发<i></i></a></dd>
+		</dl>
+		
+		
+		
+				<dl class="spec clearfix">
+			<dt>规格</dt>
+			<dd>单人位：长820*宽900*高1130mm;双人位：长1590*宽890*高1030mm;三人位：长2080*宽890*高1030mm；</dd>
+		</dl>
+				
+		
+		<dl class="number clearfix">
+			<dt>数量</dt>
+			<dd>
+				<div class="row">
+					<div class="input">
+						<input type="text" value="1" id="JS_goods_number" class="goodsNumber"><div class="click"><a href="javascript:;" class="JS_add"></a><a href="javascript:;" class="JS_minus"></a></div>
+					</div>
+					<div id="JS_goods_stock_notice" class="Left red" style="display: block;">库存数(2)</div>
+				</div>
+				<div id="JS_goods_extend_serice" class="can-select none"><label><input id="JS_install_check" type="checkbox">可选服务：师傅上门安装（费用：¥<span id="JS_install_fee">...</span>）（安装费不足起步价按起步价收取） <i class="JS_show_tip" data-type="install-service" data-direction="up"></i></label></div>
+				<div id="JS_goods_max_tips" class="goods-max-tips red" style="display: none;"></div>
+			</dd>
+		</dl>
+		<dl class="btns clearfix">
+			<dt></dt>
+			<dd id="JS_panel_text_error"></dd>
+
+			<dd id="JS_panel_btn_box" is-can-buy="true" class="">
+						<span id="JS_change_btn"><a href="javascript:;" title="找美美，要红包" class="gift btn-lxmm-new"></a></span>
+									<a id="JS_goods_panel_add" href="javascript:;" title="加入购物车" data-type="normal" class="add normal JS_addToCart shop_normal add_normal_new"></a>
+						</dd>
+		</dl>
+
+		<dl class="service clearfix">
+			<dt>服务承诺</dt>
+			<dd>
+								<div class="list Left"><a href="/article_cat-26/article-620.html" target="_blank" class="a JS_show_tip" data-type="tuihuan">45天退换</a><a href="/article_cat-26/article-679.html" target="_blank" class="a JS_show_tip" data-type="zhibao" id="JS_zhibao">质保一年</a><a href="/article_cat-26/article-1530.html" target="_blank" class="a JS_show_tip" data-type="mll-guijiupei">贵就赔</a></div>
+				
+				<div class="pay Right">
+					<div class="on JS_pay_on"><span>支付说明</span><i></i></div>
+					<div class="event JS_pay_event">
+						<div class="on JS_pay_off"><span>支付说明</span><i></i></div>
+						<p><a href="/article_cat-6/article-624.html" target="_blank" class="first">支付宝</a><a href="/article_cat-6/article-624.html" target="_blank">网银</a><a href="/article_cat-6/article-624.html" target="_blank">刷卡</a></p>
+					</div>
+				</div>
+			</dd>
+		</dl>
+
+	</div>
+</div>
+<script>
+(function(){
+	window.is_can_buy_no = '0';
+	var joinData = {"goods":[{"id":"228383","type":"1+2+3\u6c99\u53d1\u5957\u88c5","color":"","material":"","url":"\/category-shafa\/goods-228383.html"},{"id":"228377","type":"\u5355\u4eba\u4f4d\u6c99\u53d1","color":"","material":"","url":"\/category-shafa\/goods-228377.html"},{"id":"228378","type":"\u53cc\u4eba\u4f4d\u6c99\u53d1","color":"","material":"","url":"\/category-shafa\/goods-228378.html"},{"id":"228379","type":"\u4e09\u4eba\u4f4d\u6c99\u53d1","color":"","material":"","url":"\/category-shafa\/goods-228379.html"}],"mainGoodsId":"228383","current_attr":"1+2+3\u6c99\u53d1\u5957\u88c5","current_color":"","current_material":"","attrs":["type"]};
+	if(!joinData)return;
+	_onReadyList.push(function(){var q=joinData.mainGoodsId;var k=true;if($("#JS_panel_btn_box").hasClass("forbiddenVirtual")){k=false}var a="type",d="color",s="material";var p="JS_goods_attr_attr",f="JS_goods_attr_color",u="JS_goods_attr_material";var r={};r[a]=p;r[d]=f;r[s]=u;var g={};g[p]=1;g[f]=1;g[u]=1;var l=false;var m="",c="",j="";var h=joinData.goods?joinData.goods:[];var t=[p,f,u];var b=0,e="";var n=this;for(var o in t){(function(i){if($("#"+i).length>0){jQuery("#"+i).find(".opt-item").each(function(){jQuery(this).click(function(){n.clickExec($(this))})})}})(t[o])}this.clickExec=function(w){var z=w.attr("itemtype");var y=w.attr("itemname");var v=r[z];if(w.hasClass("disabled")){return}w.siblings().each(function(){jQuery(this).removeClass("current")});if(w.hasClass("current")){w.removeClass("current");if(z==a){m=""}else{if(z==d){c=""}else{j=""}}n.filterList(z);g[v]=0;b=0;for(var x in g){if(g[x]==1){b++;e=x}}if(b==1){jQuery("#"+e).find(".opt-item").each(function(){n.removeDisabled($(this))})}}else{n.setCurrent(w);if(z==a){m=y}else{if(z==d){c=y}else{j=y}}n.filterList(z);g[v]=1}if(k){n.toggleAddCartBtn()}};this.toggleAddCartBtn=function(){for(var v in g){if(!g[v]){jQuery("#JS_panel_btn_box").addClass("unselect-forbidden");$("#JS_float_chat_box").hide();return}}$("#JS_panel_btn_box").removeClass("unselect-forbidden");$("#JS_float_chat_box").show()};this.queryGoods=function(z,J,E){var w={};var B={},F={},x={};var G=[];for(var C in h){var H=h[C].type?h[C].type:"";var A=h[C].color?h[C].color:"";var I=h[C].material?h[C].material:"";var v=z?z:H;var y=J?J:A;var D=E?E:I;if(H==v&&A==y&&I==D){B[H]=1;F[A]=1;x[I]=1;G.push(h[C])}}w.type=B;w.color=F;w.material=x;w.list=G;return w};this.filterList=function(A){var i=n.queryGoods("",c,j).type;var x=n.queryGoods(m,"",j).color;var z=n.queryGoods(m,c,"").material;var y=n.queryGoods(m,c,j).list;var w={};w[a]=i;w[d]=x;w[s]=z;if(l&&y&&y.length==1&&q!=y[0].id){n.jumpTo(y[0]);return}for(var v in r){jQuery("#"+r[v]).find(".opt-item").each(function(){var B=$(this).attr("itemname");if(!w[v][B]){if(A!=v){n.setDisabled($(this))}}else{n.removeDisabled($(this))}})}};this.setCurrent=function(i){i.addClass("current")};this.setNormal=function(i){i.addClass("opt");if(i.hasClass("disabled")){i.removeClass("disabled")}if(i.hasClass("current")){i.removeClass("current")}};this.setDisabled=function(i){i.addClass("disabled");if(i.hasClass("current")){i.removeClass("current")}if(i.hasClass("opt")){i.removeClass("opt")}};this.removeDisabled=function(i){if(i.hasClass("disabled")){i.removeClass("disabled")}if(!i.hasClass("current")){i.addClass("opt")}};this.jumpTo=function(i){location.href=i.url+"?from=xqy_merge"};this.initItem=function(){m=joinData.current_attr;c=joinData.current_color;j=joinData.current_material;var x={};x[p]=joinData.current_attr;x[f]=joinData.current_color;x[u]=joinData.current_material;for(var w in r){n.filterList(w);var v=r[w];if($("#"+v).length>0){jQuery("#"+v).find(".opt-item").each(function(){var i=$(this).attr("itemname");var y=$(this).attr("itemtype");if(i==x[v]){n.setCurrent($(this));if(y==a){m=i}else{if(y==d){c=i}else{j=i}}}})}}l=true};n.initItem()});
+/*duanzheng:2016-05-04 16:38:24*/})();
+</script>	
+	
+	<div id="JS_goods_recommend" class="goods-recommend goods-recommend-new Right">
+	<div class="title">
+		<div class="text"><span>看了又看</span></div>
+		<div class="line"></div>
+	</div>
+	<div class="stage">
+		<ul id="JS_recommend_scroll_stage">
+						<li>
+				<a href="/category-shafa/goods-42673.html?from=KLYK_228383_" target="_blank" title="名师力荐 优质实木内架 内置高密度海绵 全真皮沙发套装（1+2+3）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/small/509/width/140/height/92/mode/1/encrypt/754fe21b771ffb12262a6bb0c0f55173/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPBjQ87p3GhPN_58BwSw4qImgczEp_hCtsicHk68AjWFA==.jpg" data-src="http://image.meilele.com/images/small/509/width/140/height/92/mode/1/encrypt/754fe21b771ffb12262a6bb0c0f55173/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPBjQ87p3GhPN_58BwSw4qImgczEp_hCtsicHk68AjWFA==.jpg" width="140" height="92" alt="名师力荐 优质实木内架 内置高密度海绵 全真皮沙发套装（1+2+3）"></a>
+				<p class="p1"><a href="/category-shafa/goods-42673.html?from=KLYK_228383_" target="_blank" title="名师力荐 优质实木内架 内置高密度海绵 全真皮沙发套装（1+2+3）">名师力荐 优质实木内架 内置高密度海绵 全真皮沙发套装（1+2+3）</a></p>
+				<p class="red">¥14200</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-48432.html?from=KLYK_228383_" target="_blank" title="高档桦木脚 纯天然植物纤维布艺转角沙发（1+2+右贵妃）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/small/431/width/140/height/92/mode/1/encrypt/b64c55b981743d22de9cdc7ed7c5f0cb/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHM6RoxluT0pYbTpN+4kRgElkATV6mrh7Vu0OIUDdM80kg==.jpg" data-src="http://image.meilele.com/images/small/431/width/140/height/92/mode/1/encrypt/b64c55b981743d22de9cdc7ed7c5f0cb/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHM6RoxluT0pYbTpN+4kRgElkATV6mrh7Vu0OIUDdM80kg==.jpg" width="140" height="92" alt="高档桦木脚 纯天然植物纤维布艺转角沙发（1+2+右贵妃）"></a>
+				<p class="p1"><a href="/category-shafa/goods-48432.html?from=KLYK_228383_" target="_blank" title="高档桦木脚 纯天然植物纤维布艺转角沙发（1+2+右贵妃）">高档桦木脚 纯天然植物纤维布艺转角沙发（1+2+右贵妃）</a></p>
+				<p class="red">¥6800</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-140166.html?from=KLYK_228383_" target="_blank" title="美式贵族沙发 1+2+3套装 全实木框架  精美提花工艺 手工雕刻 描金雕花" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/small/367/width/140/height/92/mode/1/encrypt/080208e16215ae42ffa29db6540c76c2/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHO6TV_c6JrqvIquKyp79cHV5I1V1Jfp3W7K_qA9UlNsFQ==.jpg" data-src="http://image.meilele.com/images/small/367/width/140/height/92/mode/1/encrypt/080208e16215ae42ffa29db6540c76c2/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHO6TV_c6JrqvIquKyp79cHV5I1V1Jfp3W7K_qA9UlNsFQ==.jpg" width="140" height="92" alt="美式贵族沙发 1+2+3套装 全实木框架  精美提花工艺 手工雕刻 描金雕花"></a>
+				<p class="p1"><a href="/category-shafa/goods-140166.html?from=KLYK_228383_" target="_blank" title="美式贵族沙发 1+2+3套装 全实木框架  精美提花工艺 手工雕刻 描金雕花">美式贵族沙发 1+2+3套装 全实木框架  精美提花工艺 手工雕刻 描金雕花</a></p>
+				<p class="red">¥22473</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-103724.html?from=KLYK_228383_" target="_blank" title="高级会所专享 上等实木框架 复古葫芦脚 舒适头层真皮沙发套装（1+3+休闲椅）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/small/184/width/140/height/92/mode/1/encrypt/7ef4dde3c92724755fbc197918df240b/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNb1TyQGqifHO5HdsYnKpdEYD66Ei0IZ5MkPVxR_4_7aQ==.jpg" data-src="http://image.meilele.com/images/small/184/width/140/height/92/mode/1/encrypt/7ef4dde3c92724755fbc197918df240b/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNb1TyQGqifHO5HdsYnKpdEYD66Ei0IZ5MkPVxR_4_7aQ==.jpg" width="140" height="92" alt="高级会所专享 上等实木框架 复古葫芦脚 舒适头层真皮沙发套装（1+3+休闲椅）"></a>
+				<p class="p1"><a href="/category-shafa/goods-103724.html?from=KLYK_228383_" target="_blank" title="高级会所专享 上等实木框架 复古葫芦脚 舒适头层真皮沙发套装（1+3+休闲椅）">高级会所专享 上等实木框架 复古葫芦脚 舒适头层真皮沙发套装（1+3+休闲椅）</a></p>
+				<p class="red">¥22346</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-275450.html?from=KLYK_228383_" target="_blank" title="优质棉麻布单人位沙发（含脚踏）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/275/width/235/height/156/mode/1/encrypt/2db093048c38c45a6880dca0ca4ed193/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOllsm1y+DMsfCz7aI+dVHIZDP9WExYnqG8H4ylrHbanD0hsJKMdUUV9Raa83iAfmF8on85k1YPmTBYzOjXhVZT.jpg" width="140" height="92" alt="优质棉麻布单人位沙发（含脚踏）"></a>
+				<p class="p1"><a href="/category-shafa/goods-275450.html?from=KLYK_228383_" target="_blank" title="优质棉麻布单人位沙发（含脚踏）">优质棉麻布单人位沙发（含脚踏）</a></p>
+				<p class="red">¥2880</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-269655.html?from=KLYK_228383_" target="_blank" title="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/231/width/235/height/156/mode/1/encrypt/6abb79c7dd009ee3612eb21069e9b51e/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPTsvTuFipzip7F0Y5Rhizpo0cTUSc1DXQrowgvC6GH7s8y8iA3Jvaj2wMgVClMrwLwkbY6uie4GM_dBIhVMMHF.jpg" width="140" height="92" alt="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位"></a>
+				<p class="p1"><a href="/category-shafa/goods-269655.html?from=KLYK_228383_" target="_blank" title="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位">美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位</a></p>
+				<p class="red">¥2650</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-309585.html?from=KLYK_228383_" target="_blank" title="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/312/width/140/height/92/mode/1/encrypt/48fad80c74eab882940c60241be26af5/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMLvltmTKnt1FTwxXGWuh+LPYjK0a9pFMIN3QeO9rZ6fA==.jpg" width="140" height="92" alt="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）"></a>
+				<p class="p1"><a href="/category-shafa/goods-309585.html?from=KLYK_228383_" target="_blank" title="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）">沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）</a></p>
+				<p class="red">¥6666</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-269632.html?from=KLYK_228383_" target="_blank" title="美式布艺沙发小户型田园地中海布艺转角沙发L型组合" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/211/width/235/height/156/mode/1/encrypt/702dccd16aac40f8a87c2e5e75650d28/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHO+zJmb3zPI+4erGu2jG8W5jJCoZ_pyoxPLwQaqMA_UsXcwhVo_ME5D5VmYPQBYXq27oDDY9EfMhG9D9W+N1xDt.jpg" width="140" height="92" alt="美式布艺沙发小户型田园地中海布艺转角沙发L型组合"></a>
+				<p class="p1"><a href="/category-shafa/goods-269632.html?from=KLYK_228383_" target="_blank" title="美式布艺沙发小户型田园地中海布艺转角沙发L型组合">美式布艺沙发小户型田园地中海布艺转角沙发L型组合</a></p>
+				<p class="red">¥4390</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-220889.html?from=KLYK_228383_" target="_blank" title="头层黄牛皮 实木手工雕刻 高贵大气 沙发套装（1+2+3）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/387/width/140/height/92/mode/1/encrypt/c7bcb6882e27296c72f411086784278b/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPUkzSMuPVJeEt0IPxgoQGjq7E4WXOj+wP1C7f9YEIVtw==.jpg" width="140" height="92" alt="头层黄牛皮 实木手工雕刻 高贵大气 沙发套装（1+2+3）"></a>
+				<p class="p1"><a href="/category-shafa/goods-220889.html?from=KLYK_228383_" target="_blank" title="头层黄牛皮 实木手工雕刻 高贵大气 沙发套装（1+2+3）">头层黄牛皮 实木手工雕刻 高贵大气 沙发套装（1+2+3）</a></p>
+				<p class="red">¥30800</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-209591.html?from=KLYK_228383_" target="_blank" title="桦木框架 头层黄牛皮 皮布结合沙发套装（1+2+3）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/379/width/140/height/92/mode/1/encrypt/c0db0b833af1b14232bf981fbebc7938/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNFf+4c+4NL0u8hRYZlLc2+fFpKu7U967xV4Dct+wr6SA==.jpg" width="140" height="92" alt="桦木框架 头层黄牛皮 皮布结合沙发套装（1+2+3）"></a>
+				<p class="p1"><a href="/category-shafa/goods-209591.html?from=KLYK_228383_" target="_blank" title="桦木框架 头层黄牛皮 皮布结合沙发套装（1+2+3）">桦木框架 头层黄牛皮 皮布结合沙发套装（1+2+3）</a></p>
+				<p class="red">¥16106</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-308486.html?from=KLYK_228383_" target="_blank" title="沙发 奢华风范 轻油蜡头层真皮 进口木方 活动靠包 L型转角沙发（1+3+左贵妃）" onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/242/width/140/height/92/mode/1/encrypt/10bc2a1b377b1810f155f9cf1df69abb/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMj1SYnXbhTIvKJ5JTin6sJz96n3MhVh78BVD+3beJh8g==.jpg" width="140" height="92" alt="沙发 奢华风范 轻油蜡头层真皮 进口木方 活动靠包 L型转角沙发（1+3+左贵妃）"></a>
+				<p class="p1"><a href="/category-shafa/goods-308486.html?from=KLYK_228383_" target="_blank" title="沙发 奢华风范 轻油蜡头层真皮 进口木方 活动靠包 L型转角沙发（1+3+左贵妃）">沙发 奢华风范 轻油蜡头层真皮 进口木方 活动靠包 L型转角沙发（1+3+左贵妃）</a></p>
+				<p class="red">¥10900</p>
+			</li>
+						<li>
+				<a href="/category-shafa/goods-264637.html?from=KLYK_228383_" target="_blank" title="贵族典范 风格时尚 坐感舒适左转角沙发（1+2+贵妃） " onclick="window._gaq.push(['_trackEvent','新版商品详情页','看了又看点击','228383__']);"><img src="http://image.meilele.com/images/blank.gif" lazy-src="http://image.meilele.com/images/small/237/width/140/height/92/mode/1/encrypt/b2454a68e389da301322ad35a89a9cff/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOvp7FLvgjE9LbsVjLUzm61QYnx67fRObH9fiz8DPZFcg==.jpg" width="140" height="92" alt="贵族典范 风格时尚 坐感舒适左转角沙发（1+2+贵妃） "></a>
+				<p class="p1"><a href="/category-shafa/goods-264637.html?from=KLYK_228383_" target="_blank" title="贵族典范 风格时尚 坐感舒适左转角沙发（1+2+贵妃） ">贵族典范 风格时尚 坐感舒适左转角沙发（1+2+贵妃） </a></p>
+				<p class="red">¥5560</p>
+			</li>
+					</ul>
+	</div>
+		<div id="JS_recommend_scroll_btn" class="arrow">
+		<a href="javascript:;" class="prev"></a>
+		<a href="javascript:;" class="next"></a>
+	</div>
+	</div>
+</div>
+
+
+
+<!--
+	作者：bucketcheng@gmail.com
+	时间：2016-12-01
+	描述：商品描述
+-->
+<div class="w mt20 clearfix">
+	<div class="main-frame">
+		<div style="height:0px;position:absolute;" id="JS_float_navs_position"></div>
+<script>
+(function(){
+	if( /MSIE\s6/.test( navigator.userAgent ) ){
+		var d = document.getElementById('JS_float_navs_position');
+		d.parentNode.removeChild( d );
+	}
+})();
+</script>
+<div id="JS_float_navs" class="module-toggle-bar fixed-top">
+	<div class="list Left"><a href="javascript:;" class="first current" id="JS_gd_tab_head_xiangqing" data-value="商品详情" data-key="xiangqing">商品详情</a><a href="javascript:;" id="JS_gd_tab_head_guige" data-value="规格参数" data-key="guige">规格参数</a><a href="javascript:;" id="JS_gd_tab_head_pingjia" style="display: inline-block;" data-value="评价" data-key="pingjia">评价<span class="red">(1)</span></a><a href="javascript:;" id="JS_gd_tab_head_jilu" style="display: inline-block;" data-value="已售" data-key="jilu">已售<span class="red">(299)</span></a><a href="javascript:;" id="JS_gd_tab_head_tiyanguan" style="display: inline-block;" data-value="体验馆" data-key="tiyanguan">杭州体验馆<span class="red">(7)</span></a><a href="javascript:;" id="JS_gd_tab_head_baozhang" data-value="服务保障" data-key="baozhang">服务保障</a>
+	</div>
+	<div class="side-btn Right"><table><tbody><tr> 
+				<td><div class="chat-box"><a href="javascript:;" id="JS_float_nav_chat" class="chat"></a></div></td>
+				 
+				<td><div id="JS_float_chat_box" class="add-box"><a id="JS_float_nav_buy" href="javascript:;" class="add"></a></div></td>
+					</tr></tbody></table></div> 
+</div>
+		
+		<div id="JS_gd_tab_body_xiangqing" class="goods-detail">
+	<div class="list">
+		<table>
+			<tbody><tr>
+								<td>商品编号：KSHT-AD-905-SFTZ</td>
+												<td>商品材质：其他材质</td>
+												<td>商品品牌：<a href="/brand-241/" target="_blank" class="red">凯撒豪庭</a></td>
+								</tr><tr>
+												<td>商品体积：4.5 m³</td>
+												<td>商品清单：1+2+3+8*抱枕+1*腰枕</td>
+												<td>产地：广东深圳</td>
+								</tr><tr>
+												<td>色系：威灵顿色系</td>
+											</tr>
+		</tbody></table>
+	</div><div class="ad"><a href="http://www.meilele.com/topic/201611_D12smkhsy.html?site_from=zhannei#thg=gaca&amp;adg=gaco&amp;adn=%E3%80%90%E5%AE%A2%E5%8E%85%E3%80%91%E8%AF%A6%E6%83%85%E9%A1%B5%E5%86%85%E9%A1%B5%E5%B9%BF%E5%91%8A&amp;ado=1&amp;adc=0" title="12.12岁末狂欢" target="_blank"><img src="http://image.meilele.com/images/201611/1480035645702634901.jpg" alt="12.12岁末狂欢" width="980"></a></div>
+
+	
+        <div class="ad clearfix" data-source="goods_hddetail_gg">
+        	<a class="fl" href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=spxqmscj#JS_img_61" title="岁末家具狂欢" target="_blank">
+    		<img src="http://image.meilele.com/images/small/290/width/490/height/450/mode/11/encrypt/fb8c1256e84dd33a09729be2f9fe17ef/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNvs0xfHXoPRJph59vZvTfIGzsMqn7OGyMhuWG0eIo9ZA==.jpg" data-src="http://image.meilele.com/images/small/290/width/490/height/450/mode/11/encrypt/fb8c1256e84dd33a09729be2f9fe17ef/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHNvs0xfHXoPRJph59vZvTfIGzsMqn7OGyMhuWG0eIo9ZA==.jpg" alt="岁末家具狂欢" width="490" height="450">
+    	</a>
+        	<a class="fl" href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=spxqmsqm#JS_img_10" title="岁末家具狂欢" target="_blank">
+    		<img src="http://image.meilele.com/images/small/170/width/490/height/225/mode/11/encrypt/71608b139f48490888c34f078b8fa33b/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPLB2fPE9qn_F8y5a6MNUq_Uj1yRwa5pzQpJRb8gOvi1A==.jpg" data-src="http://image.meilele.com/images/small/170/width/490/height/225/mode/11/encrypt/71608b139f48490888c34f078b8fa33b/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPLB2fPE9qn_F8y5a6MNUq_Uj1yRwa5pzQpJRb8gOvi1A==.jpg" alt="岁末家具狂欢" width="490" height="225">
+    	</a>
+        	<a class="fl" href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=spxqmsmj#JS_img_8" title="岁末家具狂欢" target="_blank">
+    		<img src="http://image.meilele.com/images/small/370/width/245/height/225/mode/11/encrypt/862c51ff089a45189f2f7f6a61b5ec97/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMQ65enq6vBiyLibWCJkNifgfGtgIedxNW5ziI3tqIreQ==.jpg" data-src="http://image.meilele.com/images/small/370/width/245/height/225/mode/11/encrypt/862c51ff089a45189f2f7f6a61b5ec97/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMQ65enq6vBiyLibWCJkNifgfGtgIedxNW5ziI3tqIreQ==.jpg" alt="岁末家具狂欢" width="245" height="225">
+    	</a>
+        	<a class="fl" href="http://www.meilele.com/topic/201611_D12smkhsy.html?from=spxqmswb#JS_img_8" title="岁末家具狂欢" target="_blank">
+    		<img src="http://image.meilele.com/images/small/316/width/245/height/225/mode/11/encrypt/93b80e9b3086476dfab43b793ef924a2/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPxfftLmXsGDBbLqSm7p3cySXuIO3Ak28g3EQESA4mXSg==.jpg" data-src="http://image.meilele.com/images/small/316/width/245/height/225/mode/11/encrypt/93b80e9b3086476dfab43b793ef924a2/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPxfftLmXsGDBbLqSm7p3cySXuIO3Ak28g3EQESA4mXSg==.jpg" alt="岁末家具狂欢" width="245" height="225">
+    	</a>
+        </div>
+    
+	
+	
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010478077778.jpg" data-src="http://image.meilele.com/images/201604/1460517010478077778.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010772077037.jpg" data-src="http://image.meilele.com/images/201604/1460517010772077037.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010870374334.jpg" data-src="http://image.meilele.com/images/201604/1460517010870374334.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010728176733.jpg" data-src="http://image.meilele.com/images/201604/1460517010728176733.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010953328178.jpg" data-src="http://image.meilele.com/images/201604/1460517010953328178.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010879298568.jpg" data-src="http://image.meilele.com/images/201604/1460517010879298568.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010146499034.jpg" data-src="http://image.meilele.com/images/201604/1460517010146499034.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010545986393.jpg" data-src="http://image.meilele.com/images/201604/1460517010545986393.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010604587188.jpg" data-src="http://image.meilele.com/images/201604/1460517010604587188.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010102659775.jpg" data-src="http://image.meilele.com/images/201604/1460517010102659775.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010659171407.jpg" data-src="http://image.meilele.com/images/201604/1460517010659171407.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010428552106.jpg" data-src="http://image.meilele.com/images/201604/1460517010428552106.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010278199145.jpg" data-src="http://image.meilele.com/images/201604/1460517010278199145.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010133965865.jpg" data-src="http://image.meilele.com/images/201604/1460517010133965865.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010806549932.jpg" data-src="http://image.meilele.com/images/201604/1460517010806549932.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010340455671.jpg" data-src="http://image.meilele.com/images/201604/1460517010340455671.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010990188204.jpg" data-src="http://image.meilele.com/images/201604/1460517010990188204.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010659765078.jpg" data-src="http://image.meilele.com/images/201604/1460517010659765078.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010992527590.jpg" data-src="http://image.meilele.com/images/201604/1460517010992527590.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010650824970.jpg" data-src="http://image.meilele.com/images/201604/1460517010650824970.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010650914274.jpg" data-src="http://image.meilele.com/images/201604/1460517010650914274.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010567673827.jpg" data-src="http://image.meilele.com/images/201604/1460517010567673827.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010840522592.jpg" data-src="http://image.meilele.com/images/201604/1460517010840522592.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010529068446.jpg" data-src="http://image.meilele.com/images/201604/1460517010529068446.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010597734722.jpg" data-src="http://image.meilele.com/images/201604/1460517010597734722.jpg">
+	</div>
+		<div class="img" data-source="handledpictures" style="margin-bottom:10px;">
+		<img src="http://image.meilele.com/images/201604/1460517010985481191.jpg" data-src="http://image.meilele.com/images/201604/1460517010985481191.jpg">
+	</div>
+	
+
+</div>
+
+
+
+<div id="JS_gd_tab_body_guige" class="goods-standard" style="display:none;">
+	<table>
+				<tbody><tr class="first">
+			<th colspan="2">基本信息</th>
+		</tr>
+				<tr>
+			<td class="key">品牌：</td><td>凯撒豪庭</td>
+		</tr>
+				<tr>
+			<td class="key">型号：</td><td>KSHT-AD-905-SFTZ</td>
+		</tr>
+				<tr>
+			<td class="key">风格：</td><td>美式田园</td>
+		</tr>
+				<tr>
+			<td class="key">包件：</td><td>3件</td>
+		</tr>
+				<tr>
+			<td class="key">体积：</td><td>4.5m³</td>
+		</tr>
+				<tr>
+			<td class="key">色系：</td><td>威灵顿色系</td>
+		</tr>
+				<tr>
+			<td class="key">产地：</td><td>广东深圳</td>
+		</tr>
+				<tr>
+			<td class="key">上市时间：</td><td>2016-3-2</td>
+		</tr>
+				<tr>
+			<td class="key">产品包含：</td><td>1+2+3+8*抱枕+1*腰枕</td>
+		</tr>
+						<tr>
+			<th colspan="2">产品尺寸</th>
+		</tr>
+				<tr>
+			<td class="key">规格：</td><td>单人位：长820*宽900*高1130mm;双人位：长1590*宽890*高1030mm;三人位：长2080*宽890*高1030mm；</td>
+		</tr>
+				<tr>
+			<td class="key">坐高：</td><td>460mm</td>
+		</tr>
+				<tr>
+			<td class="key">坐深：</td><td>620mm</td>
+		</tr>
+				<tr>
+			<td class="key">进门尺寸：</td><td>700mm</td>
+		</tr>
+						<tr>
+			<th colspan="2">产品构造</th>
+		</tr>
+				<tr>
+			<td class="key">靠背：</td><td>硬质实木+油蜡头层黄牛皮+环保皮（非接触面）</td>
+		</tr>
+				<tr>
+			<td class="key">坐垫：</td><td>精纺布艺+高弹力海绵+独立弹簧包</td>
+		</tr>
+				<tr>
+			<td class="key">框架：</td><td>桦木+硬质实木+夹板</td>
+		</tr>
+				<tr>
+			<td class="key">沙发脚：</td><td>桦木</td>
+		</tr>
+				<tr>
+			<td class="key">抱枕：</td><td>精纺布艺+高弹力海绵</td>
+		</tr>
+				<tr>
+			<td class="key">工艺：</td><td>纯手工雕刻</td>
+		</tr>
+				<tr>
+			<td class="key">油漆：</td><td>NC底NC面</td>
+		</tr>
+						<tr>
+			<th colspan="2">产品优势</th>
+		</tr>
+				<tr>
+			<td class="key">设计理念：</td><td>以舒适、自由的生活居家理念，结合美式乡村风格特点，打造与众不同的小资风尚。</td>
+		</tr>
+				<tr>
+			<td class="key">选材优质：</td><td>高档油蜡头层黄牛皮，皮质柔韧，色泽光亮；优质欧洲桦木，100%全实木框架，经久耐用！</td>
+		</tr>
+						<tr>
+			<th colspan="2">其他信息</th>
+		</tr>
+				<tr>
+			<td class="key">可否拆洗：</td><td>坐垫，抱枕可拆洗，只可干洗。</td>
+		</tr>
+				<tr>
+			<td class="key">运费情况：</td><td>买家承担，物流费用按体积计算！</td>
+		</tr>
+				<tr>
+			<td class="key">保养说明：</td><td>避免阳光长时间直射，以免造成产品局部褪色或泛黄，并保持使用环境清洁、干燥、通风，以免受潮。</td>
+		</tr>
+				<tr>
+			<td class="key">送货安装：</td><td>体验馆覆盖区域可付费送货+安装服务，非体验馆覆盖区域可物流点自提自安装，详情请咨询在线客服</td>
+		</tr>
+					</tbody></table>
+</div>
+
+
+
+<div id="JS_gd_tab_body_tiyanguan" class="city-exprs" style=""><div class="expr-head"><div class="current-info"><h2><a class="expr_chat" href="/hangzhou/expr.html?form=tab">杭州<span class="red">7</span>家体验馆</a></h2><a id="JS_expr_chat" class="chat_btn" href="javascript:;"></a></div><div class="list"><dl><dt class="icon1"></dt><dd><h4>安心</h4><p>试过再说买不买</p></dd></dl><dl><dt class="icon2"></dt><dd><h4>放心</h4><p>见面付款更安全</p></dd></dl><dl><dt class="icon3"></dt><dd><h4>省心</h4><p>送货到府还安装</p></dd></dl><dl><dt class="icon4"></dt><dd><h4>贴心</h4><p>退货换货包满意</p></dd></dl></div></div><ul class="expr-list clearfix"><li class="first "><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆">杭州下城区体验馆</a><a class="Right map" href="/hangzhou/area-105.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-105.html" target="_blank" title="杭州下城区体验馆"><img src="http://image.meilele.com/images/expr/1344241522422.jpg" width="170" height="107" alt="杭州下城区体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-87823268</td></tr><tr><td>营业时间：</td><td>9:00-21:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="浙江省杭州市下城区华中路174号（华丰路与华中路交叉口处）">浙江省杭州市下城区华中路174号（华丰路与华中路交叉口处）</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(105,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class=" "><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-260.html" target="_blank" title="富阳体验馆">富阳体验馆</a><a class="Right map" href="/hangzhou/area-260.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-260.html" target="_blank" title="富阳体验馆"><img src="http://image.meilele.com/images/expr/1378706960924.jpg" width="170" height="107" alt="富阳体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-63106685</td></tr><tr><td>营业时间：</td><td>9:00-18:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="浙江省富阳市文教路172、176、178、180号商铺（现代肖邦小区）">浙江省富阳市文教路172、176、178、180号商铺（现代肖邦小区）</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(260,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class="first border-top"><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-277.html" target="_blank" title="临安体验馆">临安体验馆</a><a class="Right map" href="/hangzhou/area-277.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-277.html" target="_blank" title="临安体验馆"><img src="http://image.meilele.com/images/expr/1381543553410.jpg" width="170" height="107" alt="临安体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-61134005</td></tr><tr><td>营业时间：</td><td>9:00-19:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="浙江省临安市吴越街389号锦绣山水苑正大门左侧（吴越街和江桥路交叉口）">浙江省临安市吴越街389号锦绣山水苑正大门左侧（吴越街和江桥路交叉口）</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(277,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class=" border-top"><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆">桐庐体验馆</a><a class="Right map" href="/hangzhou/area-278.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-278.html" target="_blank" title="桐庐体验馆"><img src="http://image.meilele.com/images/expr/1381549638743.jpg" width="170" height="107" alt="桐庐体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-64688860</td></tr><tr><td>营业时间：</td><td>9:00-18:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="浙江省杭州市桐庐县乔林路728号龙都宾馆二楼，长途汽车站旁">浙江省杭州市桐庐县乔林路728号龙都宾馆二楼，长途汽车站旁</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(278,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class="first border-top"><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆">杭州滨江区体验馆</a><a class="Right map" href="/hangzhou/area-262.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-262.html" target="_blank" title="杭州滨江区体验馆"><img src="http://image.meilele.com/images/expr/1378707785144.jpg" width="170" height="107" alt="杭州滨江区体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-82190819</td></tr><tr><td>营业时间：</td><td>9:00-19:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="杭州市滨江区西兴路178号（西兴路与滨康路交叉口，维也纳国际酒店向南50米，阿壹88酒店底商铺）">杭州市滨江区西兴路178号（西兴路与滨康路交叉口，维也纳国际酒店向南50米，阿壹88酒店底商铺）</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(262,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class=" border-top"><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆">杭州市西湖区体验馆</a><a class="Right map" href="/hangzhou/area-499.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-499.html" target="_blank" title="杭州市西湖区体验馆"><img src="http://image.meilele.com/images/expr/1457923440372.jpg" width="170" height="107" alt="杭州市西湖区体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-87005186</td></tr><tr><td>营业时间：</td><td>9:00-20:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="西湖区三墩镇紫萱路158号西城博司8号商铺（三墩工商所旁边）">西湖区三墩镇紫萱路158号西城博司8号商铺（三墩工商所旁边）</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(499,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class="first border-top"><dl><dt class="clearfix"><a class="Left name" href="/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆">杭州余杭区体验馆</a><a class="Right map" href="/hangzhou/area-502.html" target="_blank" title="查看展馆地图">查看地图</a></dt><dd class="clearfix"><div class="expr-face"><a href="/hangzhou/visit-502.html" target="_blank" title="杭州余杭区体验馆"><img src="http://image.meilele.com/images/expr/1459838446792.jpg" width="170" height="107" alt="杭州余杭区体验馆"></a></div><div class="extend"><table><tbody><tr><td width="60">服务电话：</td><td>0571-88696966</td></tr><tr><td>营业时间：</td><td>9:00-18:00</td></tr><tr><td>展馆地址：</td><td><div class="address"><a href="/hangzhou/area.html" target="_blank" title="杭州市余杭区南大街800号（海澜半岛东区大门正对面）">杭州市余杭区南大街800号（海澜半岛东区大门正对面）</a></div></td></tr></tbody></table><div class="click"><a href="javascript:;" class="sms" title="免费发送到手机" onclick="$.codeSms(502,{click:'体验馆', 'postionCode':'mll_gdetail2'});return !1;"></a></div></div></dd></dl></li><li class="whole-epxr border-top"><dl><dt><a href="/expr.html" target="_blank" title="全国322家体验馆">全国<span class="red">322</span>家体验馆</a></dt><dd class="clearfix"><div class="face"><a href="/expr.html" target="_blank" title="全国体验馆"><img src="http://image.meilele.com/images/upload/201412/246832455a64e7ecc2e22a5866bbd4be.png" width="156" height="112" alt="全国体验馆分布图"></a></div><div class="info"><div class="marquee"><ul id="JS_scroll_out_box" style="margin-top: -126px;"><li><a href="/topic/20160418_2016xpfb.html" target="_blank" title="定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网">定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网</a></li><li><a href="/topic/20160411-cdpp.html" target="_blank" title="4.11-4.17品牌床垫大卖场，单品直降9901--专题--美乐乐家具网">4.11-4.17品牌床垫大卖场，单品直降9901--专题--美乐乐家具网</a></li><li><a href="/topic/20160418_xpfb.html" target="_blank" title="定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网">定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网</a></li><li><a href="/topic/2016KY-CDSQQtyg.html" target="_blank" title="7.15-7.23承德双桥区体验馆耀世开业">7.15-7.23承德双桥区体验馆耀世开业</a></li><li><a href="/topic/2016KY-TJXQQtyg.html" target="_blank" title="5.14-5.15天津西青区体验馆耀世开业">5.14-5.15天津西青区体验馆耀世开业</a></li><li><a href="/topic/2016KY-NBBLQtyg.html" target="_blank" title="5.15-5.22宁波北仑区体验馆耀世开业">5.15-5.22宁波北仑区体验馆耀世开业</a></li><li><a href="/topic/2016KY-HZYHQtyg.html" target="_blank" title="4.30-5.8杭州余杭区体验馆耀世开业">4.30-5.8杭州余杭区体验馆耀世开业</a></li><li><a href="/topic/2016KY-WCtyg.html" target="_blank" title="4.30-5.8文昌体验馆耀世开业">4.30-5.8文昌体验馆耀世开业</a></li><li><a href="/topic/m_20160421_hmrcd.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/20160421_hmrcd.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/hmrm.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/hmepc.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/20160421_hmrcd-test.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/m_20160421_hmrcd-test.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/2016KY-BJDXQtyg.html" target="_blank" title="4.23-4.24北京大兴区体验馆耀世开业">4.23-4.24北京大兴区体验馆耀世开业</a></li><li><a href="/topic/20160418_2016xpfb.html" target="_blank" title="定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网">定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网</a></li><li><a href="/topic/20160411-cdpp.html" target="_blank" title="4.11-4.17品牌床垫大卖场，单品直降9901--专题--美乐乐家具网">4.11-4.17品牌床垫大卖场，单品直降9901--专题--美乐乐家具网</a></li><li><a href="/topic/20160418_xpfb.html" target="_blank" title="定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网">定制新品首发，4.18-5.8劲爆直降，华达利、宜华、健康家三大品牌联合巨献--专题--美乐乐家具网</a></li><li><a href="/topic/2016KY-CDSQQtyg.html" target="_blank" title="7.15-7.23承德双桥区体验馆耀世开业">7.15-7.23承德双桥区体验馆耀世开业</a></li><li><a href="/topic/2016KY-TJXQQtyg.html" target="_blank" title="5.14-5.15天津西青区体验馆耀世开业">5.14-5.15天津西青区体验馆耀世开业</a></li><li><a href="/topic/2016KY-NBBLQtyg.html" target="_blank" title="5.15-5.22宁波北仑区体验馆耀世开业">5.15-5.22宁波北仑区体验馆耀世开业</a></li><li><a href="/topic/2016KY-HZYHQtyg.html" target="_blank" title="4.30-5.8杭州余杭区体验馆耀世开业">4.30-5.8杭州余杭区体验馆耀世开业</a></li><li><a href="/topic/2016KY-WCtyg.html" target="_blank" title="4.30-5.8文昌体验馆耀世开业">4.30-5.8文昌体验馆耀世开业</a></li><li><a href="/topic/m_20160421_hmrcd.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/20160421_hmrcd.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/hmrm.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/hmepc.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/20160421_hmrcd-test.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/m_20160421_hmrcd-test.html" target="_blank" title="喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网">喜临门.hey美人，新品独家首发，4.21-4.24限时特惠，售价由你定--专题--美乐乐家具网</a></li><li><a href="/topic/2016KY-BJDXQtyg.html" target="_blank" title="4.23-4.24北京大兴区体验馆耀世开业">4.23-4.24北京大兴区体验馆耀世开业</a></li></ul></div><a href="/expr.html" target="_blank" title="查看全国体验馆地图" class="link"></a></div></dd></dl></li></ul></div>
+
+
+
+
+<div id="JS_gd_tab_body_pinpai" class="goods-brand-ad">
+			<div class="ad"><img src="http://image.meilele.com/images/201511/1446759056919510703.jpg" data-src="http://image.meilele.com/images/201511/1446759056919510703.jpg" alt="1" width="1024"></div>
+				<div class="ad"><img src="http://image.meilele.com/images/201602/1455739216206658819.jpg" data-src="http://image.meilele.com/images/201602/1455739216206658819.jpg" alt="2" width="1024"></div>
+				<div class="ad"><img src="http://image.meilele.com/images/201408/1408333771725926978.jpg" data-src="http://image.meilele.com/images/201408/1408333771725926978.jpg" alt="3" width="1024"></div>
+				<div class="ad"><img src="http://image.meilele.com/images/201606/1467239213236280829.jpg" data-src="http://image.meilele.com/images/201606/1467239213236280829.jpg" alt="4" width="1024"></div>
+				<div class="ad"><img src="http://image.meilele.com/images/201605/1462391573538847480.jpg" data-src="http://image.meilele.com/images/201605/1462391573538847480.jpg" alt="5" width="1024"></div>
+				<div class="ad"><img src="http://image.meilele.com/images/201508/1439251220329534458.jpg" data-src="http://image.meilele.com/images/201508/1439251220329534458.jpg" alt="6" width="1024"></div>
+				<div class="ad"><img src="http://image.meilele.com/images/201505/1431922840273568427.jpg" data-src="http://image.meilele.com/images/201505/1431922840273568427.jpg" alt="7" width="1024"></div>
+		</div>
+
+
+
+<div id="JS_gd_tab_body_pingjia" class="goods-comment commentBox"><div class="layout-module"><div class="head"><ul class="head-tab"><li class="current">评价(1)</li></ul></div><div class="body"><div class="level-mark Left"><div class="score"><strong class="red">5.0</strong>分</div><div class="star"><span class="bar" style="width:100%"></span></div></div><div class="level-view Left"><table><tbody><tr><td align="right">满意</td><td><div class="level"><span class="bar" style="width:100%"></span></div></td><td>100%</td></tr><tr><td align="right">一般</td><td><div class="level"><span class="bar" style="width:0%"></span></div></td><td>0%</td></tr><tr><td align="right">不满意</td><td><div class="level"><span class="bar" style="width:0%"></span></div></td><td>0%</td></tr></tbody></table></div><div class="tip-txt Left"><div class="gold"><a href="/user/?act=comment_list" target="_blank" title="发评价赢乐币" class="btn"></a><a href="http://www.meilele.com/article_cat-6/article-16736.html" target="_blank" title="什么是乐币？" class="red">什么是乐币？</a></div><p>写评价，赢乐币！前5名双倍哟！<br>秀美家，更多乐币轻松拿~</p></div></div></div><div id="JS_comment_box" class="mt10"><div class="filter"><a href="javascript:;" class="cm_fliter current"><span class="t">全部评价</span>(1)</a><a href="javascript:;" class="cm_fliter " data-slash="high"><span class="t">满意</span>(1)</a><a href="javascript:;" class="cm_fliter " data-slash="middle"><span class="t">一般</span>(0)</a><a href="javascript:;" class="cm_fliter " data-slash="low"><span class="t">不满意</span>(0)</a><a href="javascript:;" class="cm_fliter xspace " data-slash="only_show"><span class="t">秀家</span>(0)</a></div><div class="comment-table"><table><tbody><tr id="JS_comment_list_595584" data-comment_id="595584" data-user_name="13313372***"><td class="user-label"><div class="avatar"><img src="http://image.meilele.com/images/goods/avatar/level3.gif" width="56" height="56"></div><p class="name"><span class="">13313372***</span></p><p class="extend"><span class="red">任丘</span> 白银会员</p></td><td class="c-content"><div class="c-tip clearfix"><div class="score Left"><span class="star"><span class="bar" style="width:100%;"></span></span><span>5分</span></div><div class="time Right">2016-09-24 15:54:54发布“评价”</div></div><p>线下导购热情专业，安装师傅细心敬业，导购漂亮热情</p><div class="goods">商品名称：<a href="/category-shafa/goods-228377.html" target="_blank">纯正美式乡村格调 皮布沙发单人位 高档油蜡头层黄牛皮 （赠腰枕1个）</a></div><a href="javascript:;" title="有用" class="nice JS_comment_like"><span class="text">(1)</span><span class="space"></span></a></td></tr></tbody></table></div><div class="page-unit clearfix"><table><tbody><tr><td><span class="current">1</span></td><td>到第</td><td><input class="go-num" value="1" id="JS_sale_pingjia_page_input"></td><td>页</td><td><a class="go cm_fliter" href="javascript:;" data-slash="null" data-page="input">确定</a></td></tr></tbody></table></div></div></div>
+
+
+
+<div id="JS_gd_tab_body_jilu" class="layout-module sale-records">
+	<div class="head">
+		<ul class="head-tab"><li id="JS_jilu_header_text" class="current">已售</li></ul>
+	</div>
+	<div class="body">
+		<div id="JS_goods_sale_records_list"><table class="records-list"><tbody><tr><th class="nick" width="175">会员名</th><th width="328">商品名称</th><th width="200">地址</th><th class="align-c">件数</th><th width="185" class="align-c">成交时间</th></tr><tr><td class="nick">漳州芗城区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发三人位 高档油蜡头层黄牛皮 赠5抱枕）</div></td><td><strong>漳州</strong> 美乐乐体验馆*************</td><td class="align-c">1</td><td class="align-c">2016年11月30日</td></tr><tr><td class="nick">漳州芗城区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发单人位 高档油蜡头层黄牛皮 （赠腰枕1个）</div></td><td><strong>漳州</strong> 美乐乐体验馆*************</td><td class="align-c">1</td><td class="align-c">2016年11月30日</td></tr><tr><td class="nick">漳州芗城区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发双人位 高档油蜡头层黄牛皮 （赠3抱枕）</div></td><td><strong>漳州</strong> 美乐乐体验馆*************</td><td class="align-c">1</td><td class="align-c">2016年11月30日</td></tr><tr><td class="nick">武汉市武昌区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发单人位 高档油蜡头层黄牛皮 （赠腰枕1个）</div></td><td><strong>武汉</strong> 书城路大华南*************</td><td class="align-c">1</td><td class="align-c">2016年11月27日</td></tr><tr><td class="nick">武汉市武昌区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发三人位 高档油蜡头层黄牛皮 赠5抱枕）</div></td><td><strong>武汉</strong> 书城路大华南*************</td><td class="align-c">1</td><td class="align-c">2016年11月27日</td></tr><tr><td class="nick">武汉市武昌区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发双人位 高档油蜡头层黄牛皮 （赠3抱枕）</div></td><td><strong>武汉</strong> 书城路大华南*************</td><td class="align-c">1</td><td class="align-c">2016年11月27日</td></tr><tr><td class="nick">无锡锡山区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发单人位 高档油蜡头层黄牛皮 （赠腰枕1个）</div></td><td><strong>无锡</strong> 溪南里23-*************</td><td class="align-c">1</td><td class="align-c">2016年11月26日</td></tr><tr><td class="nick">无锡锡山区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发双人位 高档油蜡头层黄牛皮 （赠3抱枕）</div></td><td><strong>无锡</strong> 溪南里23-*************</td><td class="align-c">1</td><td class="align-c">2016年11月26日</td></tr><tr><td class="nick">无锡锡山区体验馆客户</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发三人位 高档油蜡头层黄牛皮 赠5抱枕）</div></td><td><strong>无锡</strong> 溪南里23-*************</td><td class="align-c">1</td><td class="align-c">2016年11月26日</td></tr><tr><td class="nick">mll_18705780***</td><td><div class="goods-name">纯正美式乡村格调 皮布沙发双人位 高档油蜡头层黄牛皮 （赠3抱枕）</div></td><td><strong>丽水</strong> 东临阁2栋2*************</td><td class="align-c">1</td><td class="align-c">2016年11月26日</td></tr></tbody></table></div>
+		<div id="JS_goods_sale_records_pager" class="page-unit clearfix"><table><tbody><tr><td><span class="current">1</span></td><td><a href="javascript:;" class="record_url" data-page="2">2</a></td><td><a href="javascript:;" class="record_url" data-page="3">3</a></td><td><a href="javascript:;" class="record_url" data-page="4">4</a></td><td>&nbsp;...&nbsp;</td><td><a href="javascript:;" class="record_url" data-page="30">30</a></td><td><a class="next record_url" href="javascript:;" data-page="2">下一页<span class="arrow"><span class="char">◆</span></span></a></td><td>到第</td><td><input class="go-num" value="1" id="JS_sale_record_page_input"></td><td>页</td><td><a class="go" href="javascript:;" data-page="input">确定</a></td></tr></tbody></table></div>
+	</div>
+</div>
+
+
+
+<div id="JS_gd_tab_body_baozhang" class="layout-module service-ensure">
+	<div class="head">
+		<ul class="head-tab"><li class="current">服务保障</li></ul>
+	</div>
+	<div class="body">
+		<dl class="delivery">
+			<dt>配送服务</dt>
+			<dd>
+				<div class="tip-txt"><span>我们提供体验馆配送、物流点自提、快递运输三种配送方式，您可根据需求选择最合适的配送服务。</span><a href="javascript:;" title="有问题，找美美" id="JS_peisong_chat"></a></div>
+				<table class="service-list">
+					<tbody><tr>
+						<th width="123"><span class="mll"></span></th>
+						<th width="152"><span class="s wliu"></span></th>
+						<th width="152"><span class="s shuo"></span></th>
+						<th width="152"><span class="s slou"></span></th>
+						<th width="152"><span class="s az"></span></th>
+						<th width="152"><span class="s shou"></span></th>
+					</tr>
+					<tr class="diff">
+						<td><strong>体验馆配送</strong></td>
+						<td><span class="yes"></span></td>
+						<td><span class="yes"></span></td>
+						<td><span class="yes"></span></td>
+						<td><span class="yes"></span></td>
+						<td><span class="yes"></span></td>
+					</tr>
+					<tr>
+						<td><strong>物流点自提</strong></td>
+						<td><span class="yes yes1"></span></td>
+						<td><span class="no"></span></td>
+						<td><span class="no"></span></td>
+						<td><span class="no"></span></td>
+						<td><span class="yes yes1"></span></td>
+					</tr>
+					<tr class="diff">
+						<td><strong>快递运输</strong></td>
+						<td><span class="yes"></span></td>
+						<td><span class="yes"></span></td>
+						<td><span class="no"></span></td>
+						<td><span class="no"></span></td>
+						<td><span class="yes"></span></td>
+					</tr>
+				</tbody></table>
+				<table class="transfer-list"><tbody><tr>
+					<td>
+						<div class="item">
+							<div class="icon icon1"><span></span></div>
+							<h4>体验馆配送——贴心</h4>
+							<p>我们建议您选择体验馆配送安装，体验馆负责安排物流运输、送货、专业安装整个流程：</p>
+							<div class="ol">1、<div>如无法使用电梯，须人力搬运，从第4层起将收取一定的搬运费；</div></div>
+							<div class="ol">2、<div>收货地点存在特殊情况（如垄断搬运服务、电梯或楼道太小、房门太窄、施工故障、道     路修建、小区不支持货车进入或停留等）请事先向客服或体验馆工作人员说明。</div></div>
+						</div>
+					</td>
+					<td><div class="line"></div></td>
+					<td>
+						<div class="item">
+							<div class="icon icon2"><span></span></div>
+							<h4>物流点自提——方便</h4>
+							<p>货物将从发货地送到您所在城市的物流点，需要您到指定的物流点自提。物流点提货时请注意携带收货人本人身份证原件，如需他人代收请提前告知具体签收注意事项。详见<a href="http://www.meilele.com/article_cat-23/article-5405.html" target="_blank" title="收货指南" class="red">《收货指南》</a>。</p>
+						</div>
+					</td>
+					<td><div class="line"></div></td>
+					<td>
+						<div class="item">
+							<div class="icon icon3"><span></span></div>
+							<h4>快递运输——快捷</h4>
+							<p>由快递公司送货到您所留的收货地址楼下。请您务必在签收前当场拆包检查，如有购买多件商品请一定拆开清点件数，拆包后如发现商品损坏请当场拒收并及时与我们联系，商品货损与总件数以您签收为准，如果条件允许请您拍照取证。</p>
+						</div>
+					</td>
+				</tr></tbody></table>
+			</dd>
+		</dl>
+		<dl>
+			<dt>贴心包装</dt>
+			<dd><img src="http://image.meilele.com/images/goods/s-package.jpg" width="978" height="669" alt="贴心包装"></dd>
+		</dl>
+		<dl class="after-service">
+			<dt>售后服务</dt>
+			<dd>
+				<table><tbody><tr>
+					<td>
+						<div class="item">
+							<div class="icon icon1"><span></span></div>
+							<h4>商品质保</h4>
+							<p>所有商品，美乐乐将严格按照国家三包法等有关法律、法规为您提供质保服务。家具类产品、木地板产品、定制门产品、灯饰 照明类、厨卫装修类、五金工具类和五金电器类产品：1年，详情请见<a href="http://www.meilele.com/article_cat-26/article-679.html" target="_blank" title="家具保修" class="red">《家具保修》</a>，<a href="http://www.meilele.com/article_cat-26/article-8169.html" target="_blank" title="建材保修政策" class="red">《建材保修政策》</a>；瓷砖和墙纸无质保期。</p>
+						</div>
+					</td>
+					<td><div class="line"></div></td>
+					<td>
+						<div class="item">
+							<div class="icon icon2"><span></span></div>
+							<h4>退货和流程</h4>
+							<p>美乐乐为您提供最长时限为<a href="http://www.meilele.com/article_cat-26/article-620.html" target="_blank" title="45天的无理由退换货" class="red">45天的无理由退换货</a>，根据商品品牌、品类不同会有所差异。如需退换货，请先将需要退换货信息反馈给美乐乐订单跟踪人员，我们接到信息后会及时联系您处理。详情请见<a href="http://www.meilele.com/article_cat-26/article-620.html" target="_blank" title="退货和流程" class="red">《退货和流程》</a>。</p>
+						</div>
+					</td>
+				</tr></tbody></table>
+			</dd>
+		</dl>
+		<dl class="goods-faq">
+			<dt>常见问题解答</dt>
+			<dd>
+				<div class="toggle-bar">
+					<div id="JS_faq_tab_head" class="handler Left"><a href="javascript:;" class="first current">商品相关</a>|<a href="javascript:;">物流配送</a>|<a href="javascript:;">售后问题</a>|<a href="javascript:;">付款相关</a></div>
+					<a href="javascript:;" title="有问题，找美美" id="JS_faq_chat" class="Left chat"></a>
+				</div>
+				<div id="JS_faq_tab_body">
+					<ul class="current">
+						<li class="first">
+							<p class="q">图片看着很喜欢，但是没有看到实物不敢买，不确定图片和实物是否一样？是否有色差？</p>
+							<p class="a">我们的产品图片均采用实物拍摄，确保为您提供的产品真实性。但是由于拍摄环境、光线以及显示频率等原因，实物和图片可能存在微小色差，可用不同显示器查看，这个微小色差不会影响到您购买。目前我们在全国开设了数百家体验馆，您可以到所在城市体验馆参观和体验家具品质。“<a href="http://www.meilele.com/expr.html" target="_blank" title="查看全国体验馆" class="red">查看全国体验馆</a>”。</p>
+							<a href="javascript:;" title="免费发送到手机" class="sms" onclick="$.sendSms(false, {click:'产品详情页常见问答'});return -1;"></a>
+						</li>
+						<li>
+							<p class="q">网上的所有产品体验馆是否都有实物展示？</p>
+							<p class="a">由于体验馆受面积限制，挑选了最有代表性的商品进行展出，您可就近亲临当地体验馆，实地感受家具的品质及做工。</p>
+						</li>
+						<li>
+							<p class="q">产品有味道吗？环保指数是多少呢？</p>
+							<p class="a">由于我们是工厂生产好后直接发货，多少都有点气味的。不过气味不大，将房间多通风，或者放些樟脑丸活性炭，过段时间就没问题了。家具板材均达到欧洲环保E1级标准，用漆均为环保漆。您可以放心购买。</p>
+						</li>
+					</ul>
+					<ul>
+						<li class="first">
+							<p class="q">你们可不可以送货上门？</p>
+							<p class="a">
+								1、开设有体验馆的城市提供在服务范围内的送货上门及安装服务，详情请点击进入“<a href="http://www.meilele.com/article_cat-23/article-3206.html" target="_blank" title="全国体验馆服务费" class="red">全国体验馆服务费</a>”查询。服务费率及包安装商品详情请咨询当地体验馆工作人员。<br>
+								2、其他城市可通过物流发货，货物被送到物流点后，需要您到物流点提货。如果需要物流送货上门，物流则需要另收取一部分送货费用。<br>
+								3、部分小件商品可发快递<br>
+								具体情况请咨询<a href="javascript:;" class="red" onclick="window.mchat.openui('',{'click':'wenti'});return false;">在线客服</a>或当地体验馆工作人员。
+							</p>
+							<a href="javascript:;" title="免费发送到手机" class="sms" onclick="$.sendSms(false, {click:'产品详情页常见问答'});return -1;"></a>
+						</li>
+						<li>
+							<p class="q">商品包邮吗？</p>
+							<p class="a">由于各地物流费差异较大，标价没有包含运费；且美乐乐的商品是工厂直销，价格已经是最低了，就算产品加上运费性价比也很高。部分参加活动的商品可以提供包邮服务，详细情况请咨询当地体验馆工作人员或<a href="javascript:;" class="red" onclick="window.mchat.openui('',{'click':'wenti'});return false;">在线客服</a>。</p>
+						</li>
+						<li>
+							<p class="q">走什么物流呢？物流的提货点在哪里呢？</p>
+							<p class="a">美乐乐面向全国发货，大部分地区我们采用自己的物流整车发货，以保证商品在运输中的安全。非体验馆城市都是物流中转到当地城区，产品到货后会有客服及时与您联系提供具体提货地址及详细信息，您也可根据物流单号查询或咨询美乐乐<a href="javascript:;" class="red" onclick="window.mchat.openui('',{'click':'wenti'});return false;">在线客服</a>。</p>
+						</li>
+						<li>
+							<p class="q">在体验馆直购买当时就可以提货吧？</p>
+							<p class="a">体验馆产品（除体验馆特卖产品）都属摆展样品，无法直接为您提供。下订单后，我们会及时从最近仓库发货，确保您能尽快收到货。体验馆特卖等部分产品可现场提货，详细情况请咨询当地体验馆工作人员。</p>
+						</li>
+						<li>
+							<p class="q">什么时候能发货？什么时候能到货？</p>
+							<p class="a">商品有现货的情况下，下单后会根据您的需求尽快发货，一般为15-20天左右。没有现货的商品，发货时间根据具体产品的生产周期而定。由于物流会受天气、路况等因素影响，具体到货时间可查询物流单号或咨询美乐乐<a href="javascript:;" class="red" onclick="window.mchat.openui('',{'click':'wenti'});return false;">在线客服</a>。</p>
+						</li>
+					</ul>
+					<ul>
+						<li class="first">
+							<p class="q">运输损坏了怎么办？</p>
+							<p class="a">发货前，我们都会对商品进行防摔包装以保证运输中的安全。由于大件商品的特殊性难免在运输装卸中出现意外，如有物流损坏问题，我们会联系专业维修师傅上门为您处理。若您所在区域没有美乐乐的维修服务，您可以请本地第三方进行维修，费用由我方承担。如果物流损坏严重影响使用，我们会免费为您及时提供更换，详情请查看“<a href="http://www.meilele.com/article_cat-26/article-2838.html" target="_blank" title="维修补件说明" class="red">维修补件说明</a>”。</p>
+						</li>
+						<li>
+							<p class="q">质量怎么保证？售后是怎样的？有保障吗？</p>
+							<p class="a">本站产品均来自国内一线品牌厂家，质量经过国家严格检测；我还设有质量检测部门驻厂对产品进行检验，严格把控产品质量。并且我方专门设有“<a href="http://www.meilele.com/article_cat-26/article-620.html" target="_blank" title="45天无理由退货服务" class="red">45天无理由退货服务</a>”，家具以及建材一年质保。在质保期内，如果出现质量问题我们免费为您维修。请您放心购买！“<a href="http://www.meilele.com/expr.html" target="_blank" title="查看全国体验馆" class="red">查看全国体验馆</a>”</p>
+							<a href="javascript:;" title="免费发送到手机" class="sms" onclick="$.sendSms(false, {click:'产品详情页常见问答'});return -1;"></a>
+						</li>
+						<li>
+							<p class="q">没有体验馆的城市怎么售后？</p>
+							<p class="a">截止目前，美乐乐已在全国大部分地区建立了完善的售后服务网络，在暂时未设体验馆的城市，亦有合作的第三方维修团队，能为您提供优质完善的售后服务，请放心购买。</p>
+						</li>
+					</ul>
+					<ul>
+						<li class="first">
+							<p class="q">付款方式有哪几种呢？</p>
+							<p class="a">
+								具体付款方式包括以下四种：<br>
+								1、网银在线支付；<br>
+								2、信用卡支付；<br>
+								3、支付平台支付（支付宝、易宝支付、财付通）；<br>
+								4、银行柜台转账汇款；“<a href="http://www.meilele.com/article_cat-6/article-624.html" target="_blank" title="付款方式详情" class="red">付款方式详情</a>”。<br>
+								*温馨提示：您还可以到就近的体验馆下单使用POS机刷卡支付、现金支付
+							</p>
+						</li>
+						<li>
+							<p class="q">可以货到付款吗？为什么不能货到付款？先付款给你们有什么保障？</p>
+							<p class="a">由于目前国内物流到付风险较大，为了保证您的资金安全，美乐乐暂时不支持货到付款服务。本网站经过ICP备案，同时也是支付宝特约商家，全国有数百家实体店，您可以放心订购！</p>
+						</li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+	</div>
+
+		<div class="head mt10 guess_you_like_head">
+		<ul class="head-tab"><li class="current">您可能还喜欢</li></ul>
+		<!-- <div class="guess_you_like_more"><a href="/special_favour/1.html?from=goodstj" target="_blank">更多&gt;&gt;</a></div> -->
+	</div>
+	<div class="body clearfix guess_you_like">
+						<div class="Left item">
+			<div class="img"><a href="/category-shafa/goods-269632.html?from=xqy_nknhxh" title="美式布艺沙发小户型田园地中海布艺转角沙发L型组合" target="_blank"><img src="http://image.meilele.com/images/small/279/width/300/height/200/mode/1/encrypt/72c0af46902172dcf25de9f72e27870d/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHO+zJmb3zPI+4erGu2jG8W5jJCoZ_pyoxPLwQaqMA_UsXcwhVo_ME5D5VmYPQBYXq27oDDY9EfMhG9D9W+N1xDt.jpg" width="207" height="137"></a></div>
+			<div class="name"><a href="/category-shafa/goods-269632.html?from=xqy_nknhxh" title="美式布艺沙发小户型田园地中海布艺转角沙发L型组合" target="_blank">美式布艺沙发小户型田园地中海布艺转角沙发L型组合</a></div>
+			<div class="clearfix">
+				<div class="Left price"><a href="/category-shafa/goods-269632.html?from=xqy_nknhxh" title="美式布艺沙发小户型田园地中海布艺转角沙发L型组合" target="_blank">¥4390</a></div>
+				<div class="Right sold"><a href="/category-shafa/goods-269632.html?from=xqy_nknhxh" title="美式布艺沙发小户型田园地中海布艺转角沙发L型组合" target="_blank"><span class="gray">已售</span> 10</a></div>
+			</div>
+		</div>
+								<div class="Left item">
+			<div class="img"><a href="/category-shafa/goods-269655.html?from=xqy_nknhxh" title="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位" target="_blank"><img src="http://image.meilele.com/images/small/537/width/300/height/200/mode/1/encrypt/e4479f50a72bc026a45aef4cfb2f7521/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPTsvTuFipzip7F0Y5Rhizpo0cTUSc1DXQrowgvC6GH7s8y8iA3Jvaj2wMgVClMrwLwkbY6uie4GM_dBIhVMMHF.jpg" width="207" height="137"></a></div>
+			<div class="name"><a href="/category-shafa/goods-269655.html?from=xqy_nknhxh" title="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位" target="_blank">美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位</a></div>
+			<div class="clearfix">
+				<div class="Left price"><a href="/category-shafa/goods-269655.html?from=xqy_nknhxh" title="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位" target="_blank">¥2650</a></div>
+				<div class="Right sold"><a href="/category-shafa/goods-269655.html?from=xqy_nknhxh" title="美式乡村沙发田园风格欧式沙发高档布艺沙发 三人位" target="_blank"><span class="gray">已售</span> 10</a></div>
+			</div>
+		</div>
+								<div class="Left item">
+			<div class="img"><a href="/category-shafa/goods-275450.html?from=xqy_nknhxh" title="优质棉麻布单人位沙发（含脚踏）" target="_blank"><img src="http://image.meilele.com/images/small/241/width/300/height/200/mode/1/encrypt/5403fae84f2d98b8b0e9f1ba747034f6/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOllsm1y+DMsfCz7aI+dVHIZDP9WExYnqG8H4ylrHbanD0hsJKMdUUV9Raa83iAfmF8on85k1YPmTBYzOjXhVZT.jpg" width="207" height="137"></a></div>
+			<div class="name"><a href="/category-shafa/goods-275450.html?from=xqy_nknhxh" title="优质棉麻布单人位沙发（含脚踏）" target="_blank">优质棉麻布单人位沙发（含脚踏）</a></div>
+			<div class="clearfix">
+				<div class="Left price"><a href="/category-shafa/goods-275450.html?from=xqy_nknhxh" title="优质棉麻布单人位沙发（含脚踏）" target="_blank">¥2880</a></div>
+				<div class="Right sold"><a href="/category-shafa/goods-275450.html?from=xqy_nknhxh" title="优质棉麻布单人位沙发（含脚踏）" target="_blank"><span class="gray">已售</span> 20</a></div>
+			</div>
+		</div>
+								<div class="Left item">
+			<div class="img"><a href="/category-shafa/goods-309585.html?from=xqy_nknhxh" title="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）" target="_blank"><img src="http://image.meilele.com/images/201611/1479372545620252771.jpg" width="207" height="137"></a></div>
+			<div class="name"><a href="/category-shafa/goods-309585.html?from=xqy_nknhxh" title="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）" target="_blank">沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）</a></div>
+			<div class="clearfix">
+				<div class="Left price"><a href="/category-shafa/goods-309585.html?from=xqy_nknhxh" title="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）" target="_blank">¥6666</a></div>
+				<div class="Right sold"><a href="/category-shafa/goods-309585.html?from=xqy_nknhxh" title="沙发套装 素雅格调 美式艺术经典复古铜钉 带储物箱功能座包棉麻布艺沙发套装（1+2+3）" target="_blank"><span class="gray">已售</span> 3</a></div>
+			</div>
+		</div>
+					</div>
+	</div>	</div>
+
+	<div class="side-frame">
+		<div class="recommend-data popular">
+	<h3 class="title">人气推荐</h3>
+	<ul>
+						<li>
+			<div class="face"><span class="label">1</span><a href="/category-shafa/goods-57984.html?from=xqy_rqtj" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）"><img src="http://image.meilele.com/images/small/502/width/195/height/129/mode/1/encrypt/790cb4f479b6b962f0bcb7135d81073f/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOwvc+DnWYNYtR6LJ9tr71uhWK9RM1DXt2p2F1qOE34dQ==.jpg" data-src="http://image.meilele.com/images/small/502/width/195/height/129/mode/1/encrypt/790cb4f479b6b962f0bcb7135d81073f/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOwvc+DnWYNYtR6LJ9tr71uhWK9RM1DXt2p2F1qOE34dQ==.jpg" width="195" height="129" alt="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）"></a></div>
+			<div class="name"><a href="/category-shafa/goods-57984.html?from=xqy_rqtj" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）">上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-shafa/goods-57984.html?from=xqy_rqtj" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）">¥7999</a><a class="goods_side_gray Right" href="/category-shafa/goods-57984.html?from=xqy_rqtj" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）">人气 <span class="red">38580</span></a></p>
+		</li>
+								<li>
+			<div class="face"><span class="label">2</span><a href="/category-shafa/goods-39788.html?from=xqy_rqtj" target="_blank" title="名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）"><img src="http://image.meilele.com/images/small/247/width/195/height/129/mode/1/encrypt/9ea02ad0be44b9def671ccf9d07a33ae/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMlmcqmZa746U4q+_8KhGBr6B54acoept89P2v2fmWGUg==.jpg" data-src="http://image.meilele.com/images/small/247/width/195/height/129/mode/1/encrypt/9ea02ad0be44b9def671ccf9d07a33ae/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMlmcqmZa746U4q+_8KhGBr6B54acoept89P2v2fmWGUg==.jpg" width="195" height="129" alt="名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）"></a></div>
+			<div class="name"><a href="/category-shafa/goods-39788.html?from=xqy_rqtj" target="_blank" title="名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）">名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-shafa/goods-39788.html?from=xqy_rqtj" target="_blank" title="名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）">¥8699</a><a class="goods_side_gray Right" href="/category-shafa/goods-39788.html?from=xqy_rqtj" target="_blank" title="名流之选 巴西进口头层黄牛皮 五档调节头枕左转角沙发（1+3+左贵妃）">人气 <span class="red">108180</span></a></p>
+		</li>
+								<li>
+			<div class="face"><span class="label">3</span><a href="/category-shafa/goods-24093.html?from=xqy_rqtj" target="_blank" title="舒适黄牛真皮沙发 高弹性公仔棉真皮腰枕 带储物功能L型皮艺左转角沙发"><img src="http://image.meilele.com/images/small/268/width/195/height/129/mode/1/encrypt/8fc6cac63159be7298cfeb35ac6a3b32/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMl04YmXakFf+Tngk_ksIC59ybdhTY+OX1IPpaZI_jmHQ==.jpg" data-src="http://image.meilele.com/images/small/268/width/195/height/129/mode/1/encrypt/8fc6cac63159be7298cfeb35ac6a3b32/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMl04YmXakFf+Tngk_ksIC59ybdhTY+OX1IPpaZI_jmHQ==.jpg" width="195" height="129" alt="舒适黄牛真皮沙发 高弹性公仔棉真皮腰枕 带储物功能L型皮艺左转角沙发"></a></div>
+			<div class="name"><a href="/category-shafa/goods-24093.html?from=xqy_rqtj" target="_blank" title="舒适黄牛真皮沙发 高弹性公仔棉真皮腰枕 带储物功能L型皮艺左转角沙发">舒适黄牛真皮沙发 高弹性公仔棉真皮腰枕 带储物功能L型皮艺左转角沙发</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-shafa/goods-24093.html?from=xqy_rqtj" target="_blank" title="舒适黄牛真皮沙发 高弹性公仔棉真皮腰枕 带储物功能L型皮艺左转角沙发">¥7000</a><a class="goods_side_gray Right" href="/category-shafa/goods-24093.html?from=xqy_rqtj" target="_blank" title="舒适黄牛真皮沙发 高弹性公仔棉真皮腰枕 带储物功能L型皮艺左转角沙发">人气 <span class="red">1341660</span></a></p>
+		</li>
+								<li>
+			<div class="face"><span class="label">4</span><a href="/category-shafa/goods-46877.html?from=xqy_rqtj" target="_blank" title="名师设计 进口全实木框架沙发 碎花布艺全拆洗沙发（1+2+3）"><img src="http://image.meilele.com/images/small/796/width/195/height/129/mode/1/encrypt/25c4f07c823f1b197e877aa36b2e4783/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOuWMc3+OcgVidbN1L284wiwegWazoLX0TU00xSgDc6zg==.jpg" data-src="http://image.meilele.com/images/small/796/width/195/height/129/mode/1/encrypt/25c4f07c823f1b197e877aa36b2e4783/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOuWMc3+OcgVidbN1L284wiwegWazoLX0TU00xSgDc6zg==.jpg" width="195" height="129" alt="名师设计 进口全实木框架沙发 碎花布艺全拆洗沙发（1+2+3）"></a></div>
+			<div class="name"><a href="/category-shafa/goods-46877.html?from=xqy_rqtj" target="_blank" title="名师设计 进口全实木框架沙发 碎花布艺全拆洗沙发（1+2+3）">名师设计 进口全实木框架沙发 碎花布艺全拆洗沙发（1+2+3）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-shafa/goods-46877.html?from=xqy_rqtj" target="_blank" title="名师设计 进口全实木框架沙发 碎花布艺全拆洗沙发（1+2+3）">¥9699</a><a class="goods_side_gray Right" href="/category-shafa/goods-46877.html?from=xqy_rqtj" target="_blank" title="名师设计 进口全实木框架沙发 碎花布艺全拆洗沙发（1+2+3）">人气 <span class="red">364410</span></a></p>
+		</li>
+																													</ul>
+</div>
+
+
+
+<div class="recommend-data">
+	<h3 class="title">大家还买了</h3>
+	<ul>
+				<li>
+			<div class="face"><a href="/category-cantingtaozhuang/goods-17382.html?from=xqy_djhml" target="_blank" title="实用性带抽屉餐桌设计 栅栏式镂空靠背 1.2米上等实木餐厅套装（1餐台+4餐椅）"><img src="http://image.meilele.com/images/small/110/width/195/height/129/mode/1/encrypt/56f3f1f5ec47689c0337afddb107ae7a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOhGnoMafXKQcm+A4+7adwwUGTslmFtZIlnxzJiK4ZeUw==.jpg" data-src="http://image.meilele.com/images/small/110/width/195/height/129/mode/1/encrypt/56f3f1f5ec47689c0337afddb107ae7a/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOhGnoMafXKQcm+A4+7adwwUGTslmFtZIlnxzJiK4ZeUw==.jpg" width="195" height="129" alt="实用性带抽屉餐桌设计 栅栏式镂空靠背 1.2米上等实木餐厅套装（1餐台+4餐椅）"></a></div>
+			<div class="name"><a href="/category-cantingtaozhuang/goods-17382.html?from=xqy_djhml" target="_blank" title="实用性带抽屉餐桌设计 栅栏式镂空靠背 1.2米上等实木餐厅套装（1餐台+4餐椅）">实用性带抽屉餐桌设计 栅栏式镂空靠背 1.2米上等实木餐厅套装（1餐台+4餐椅）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-cantingtaozhuang/goods-17382.html?from=xqy_djhml" target="_blank" title="实用性带抽屉餐桌设计 栅栏式镂空靠背 1.2米上等实木餐厅套装（1餐台+4餐椅）">¥3399</a><a class="goods_side_gray Right" href="/category-cantingtaozhuang/goods-17382.html?from=xqy_djhml" target="_blank" title="实用性带抽屉餐桌设计 栅栏式镂空靠背 1.2米上等实木餐厅套装（1餐台+4餐椅）">已售 <span class="red">57202</span></a></p>
+		</li>
+				<li>
+			<div class="face"><a href="/category-canyi/goods-20949.html?from=xqy_djhml" target="_blank" title="实木框架餐椅  舒适餐椅 异域风尚餐椅"><img src="http://image.meilele.com/images/small/135/width/195/height/129/mode/1/encrypt/df1beff7a370625857757c453ab48589/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMj79RcXC2o+EZ2dCLMAAm06UdHoZ1Tm7gZNyesILyaxg==.jpg" data-src="http://image.meilele.com/images/small/135/width/195/height/129/mode/1/encrypt/df1beff7a370625857757c453ab48589/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMj79RcXC2o+EZ2dCLMAAm06UdHoZ1Tm7gZNyesILyaxg==.jpg" width="195" height="129" alt="实木框架餐椅  舒适餐椅 异域风尚餐椅"></a></div>
+			<div class="name"><a href="/category-canyi/goods-20949.html?from=xqy_djhml" target="_blank" title="实木框架餐椅  舒适餐椅 异域风尚餐椅">实木框架餐椅  舒适餐椅 异域风尚餐椅</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-canyi/goods-20949.html?from=xqy_djhml" target="_blank" title="实木框架餐椅  舒适餐椅 异域风尚餐椅">¥560</a><a class="goods_side_gray Right" href="/category-canyi/goods-20949.html?from=xqy_djhml" target="_blank" title="实木框架餐椅  舒适餐椅 异域风尚餐椅">已售 <span class="red">47985</span></a></p>
+		</li>
+				<li>
+			<div class="face"><a href="/category-shafa/goods-57984.html?from=xqy_djhml" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）"><img src="http://image.meilele.com/images/small/502/width/195/height/129/mode/1/encrypt/790cb4f479b6b962f0bcb7135d81073f/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOwvc+DnWYNYtR6LJ9tr71uhWK9RM1DXt2p2F1qOE34dQ==.jpg" data-src="http://image.meilele.com/images/small/502/width/195/height/129/mode/1/encrypt/790cb4f479b6b962f0bcb7135d81073f/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHOwvc+DnWYNYtR6LJ9tr71uhWK9RM1DXt2p2F1qOE34dQ==.jpg" width="195" height="129" alt="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）"></a></div>
+			<div class="name"><a href="/category-shafa/goods-57984.html?from=xqy_djhml" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）">上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-shafa/goods-57984.html?from=xqy_djhml" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）">¥7999</a><a class="goods_side_gray Right" href="/category-shafa/goods-57984.html?from=xqy_djhml" target="_blank" title="上等白杨实木框架 储物收纳L型沙发 清新双色拼接转角沙发（1+3+左贵妃）">已售 <span class="red">44405</span></a></p>
+		</li>
+				<li>
+			<div class="face"><a href="/category-cantingtaozhuang/goods-34759.html?from=xqy_djhml" target="_blank" title="可折叠拉伸餐桌设计 黑白双色拼接功能型1.43米餐厅套装 （1餐台+4餐椅）"><img src="http://image.meilele.com/images/small/469/width/195/height/129/mode/1/encrypt/9ae22fd3a5dbaa5f08be78ba9e869b48/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMr3PC4j82l8OS57wlwwe3s7kVX_6D6KQ16RncW+detpQ==.jpg" data-src="http://image.meilele.com/images/small/469/width/195/height/129/mode/1/encrypt/9ae22fd3a5dbaa5f08be78ba9e869b48/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMr3PC4j82l8OS57wlwwe3s7kVX_6D6KQ16RncW+detpQ==.jpg" width="195" height="129" alt="可折叠拉伸餐桌设计 黑白双色拼接功能型1.43米餐厅套装 （1餐台+4餐椅）"></a></div>
+			<div class="name"><a href="/category-cantingtaozhuang/goods-34759.html?from=xqy_djhml" target="_blank" title="可折叠拉伸餐桌设计 黑白双色拼接功能型1.43米餐厅套装 （1餐台+4餐椅）">可折叠拉伸餐桌设计 黑白双色拼接功能型1.43米餐厅套装 （1餐台+4餐椅）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-cantingtaozhuang/goods-34759.html?from=xqy_djhml" target="_blank" title="可折叠拉伸餐桌设计 黑白双色拼接功能型1.43米餐厅套装 （1餐台+4餐椅）">¥3173</a><a class="goods_side_gray Right" href="/category-cantingtaozhuang/goods-34759.html?from=xqy_djhml" target="_blank" title="可折叠拉伸餐桌设计 黑白双色拼接功能型1.43米餐厅套装 （1餐台+4餐椅）">已售 <span class="red">32503</span></a></p>
+		</li>
+				<li>
+			<div class="face"><a href="/category-chuangtougui/goods-18777.html?from=xqy_djhml" target="_blank" title="现代皮艺床头柜"><img src="http://image.meilele.com/images/small/416/width/195/height/129/mode/1/encrypt/bdf39b64fc2dff6115fa7a1bf281b4a4/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMoNmhN3hevNit1lbtqaerASoUmtLlPb6lI2MmKuBGgWg==.jpg" data-src="http://image.meilele.com/images/small/416/width/195/height/129/mode/1/encrypt/bdf39b64fc2dff6115fa7a1bf281b4a4/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHMoNmhN3hevNit1lbtqaerASoUmtLlPb6lI2MmKuBGgWg==.jpg" width="195" height="129" alt="现代皮艺床头柜"></a></div>
+			<div class="name"><a href="/category-chuangtougui/goods-18777.html?from=xqy_djhml" target="_blank" title="现代皮艺床头柜">现代皮艺床头柜</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-chuangtougui/goods-18777.html?from=xqy_djhml" target="_blank" title="现代皮艺床头柜">¥499</a><a class="goods_side_gray Right" href="/category-chuangtougui/goods-18777.html?from=xqy_djhml" target="_blank" title="现代皮艺床头柜">已售 <span class="red">28539</span></a></p>
+		</li>
+				<li>
+			<div class="face"><a href="/category-ketingtaofang/goods-20886.html?from=xqy_djhml" target="_blank" title="客厅组合柜套装（地柜+单门酒柜+双门酒柜）"><img src="http://image.meilele.com/images/small/261/width/195/height/129/mode/1/encrypt/cede25d057d9a7bc92e1e3a75d5df035/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPz5urEVIaCjRpRKJPhwPWw1GJlZ3xEeLgF5rSBZ3KX6Q==.jpg" data-src="http://image.meilele.com/images/small/261/width/195/height/129/mode/1/encrypt/cede25d057d9a7bc92e1e3a75d5df035/path/YKkxtD0+l8CT6mdTP0jUTosXyzGqRaYb484nDncYwHPz5urEVIaCjRpRKJPhwPWw1GJlZ3xEeLgF5rSBZ3KX6Q==.jpg" width="195" height="129" alt="客厅组合柜套装（地柜+单门酒柜+双门酒柜）"></a></div>
+			<div class="name"><a href="/category-ketingtaofang/goods-20886.html?from=xqy_djhml" target="_blank" title="客厅组合柜套装（地柜+单门酒柜+双门酒柜）">客厅组合柜套装（地柜+单门酒柜+双门酒柜）</a></div>
+			<p class="clearfix"><a class="red Left" href="/category-ketingtaofang/goods-20886.html?from=xqy_djhml" target="_blank" title="客厅组合柜套装（地柜+单门酒柜+双门酒柜）">¥4059</a><a class="goods_side_gray Right" href="/category-ketingtaofang/goods-20886.html?from=xqy_djhml" target="_blank" title="客厅组合柜套装（地柜+单门酒柜+双门酒柜）">已售 <span class="red">18891</span></a></p>
+		</li>
+			</ul>
+</div>
+
+<div class="ad"><a href="http://www.meilele.com/topic/201611_D12smkhsy.html?site_from=zhannei#thg=gaca&amp;adg=gaco&amp;adn=%E8%AF%A6%E6%83%85%E9%A1%B5%E5%B7%A6%E4%BE%A7%E5%B9%BF%E5%91%8A&amp;ado=1&amp;adc=0" title="12.12岁末狂欢"><img src="http://image.meilele.com/images/201611/1480031158988856671.jpg"></a></div><div class="ad"><a href="http://www.meilele.com/topic/201510-wxqhb.html?site_from=ltpflh" target="_blank" title="200元红包||扫码抢"><img src="http://image.meilele.com/images/201511/1446698602364844138.jpg" alt="200元红包||扫码抢" style="width:210px;height:260px;margin-left:-2px;"><img src="http://image.meilele.com/images/201611/73ebe636d7d37993c2817341347bd381.jpg" alt="买家具，就上美乐乐" style="width:125px;height:125px;margin-top:-179px;margin-left:41px;"></a></div>
+	</div>
+</div>
+
+
+
+<!--
+	作者：bucketcheng@gmail.com
+	时间：2016-12-01
+	描述：footer
+-->
+<div class="footer-box">
+
+    <div class="footer">
+        <div class="footer-icon">
+            <div class="w"> 
+                <a href="/topic/article_diyipinpai.html#tab=o2o" target="_blank" title="网商+体验馆" rel="nofollow" class="icon-map"><p class="icon-bg i1"></p><p class="icon-title">网商+体验馆</p></a><a href="/topic/article_diyipinpai.html#tab=bso" target="_blank" title="100%正品" rel="nofollow" class="icon-map"><p class="icon-bg i3"></p><p class="icon-title">100%正品</p></a><a href="/topic/article_diyipinpai.html#tab=quality" target="_blank" title="双重质检" rel="nofollow" class="icon-map"><p class="icon-bg i4"></p><p class="icon-title">双重质检</p></a><a href="/topic/article_diyipinpai.html#tab=purchase" target="_blank" title="全球化采购" rel="nofollow" class="icon-map"><p class="icon-bg i5"></p><p class="icon-title">全球化采购</p></a><a href="/topic/article_diyipinpai.html#tab=returns" target="_blank" title="无理由退货" rel="nofollow" class="icon-map"><p class="icon-bg i6"></p><p class="icon-title">无理由退货</p></a><a href="/topic/article_diyipinpai.html#tab=postage" target="_blank" title="贵就赔" rel="nofollow" class="icon-map"><p class="icon-bg i7"></p><p class="icon-title">贵就赔</p></a><a href="/topic/article_diyipinpai.html#tab=mouth" target="_blank" title="万千口碑" rel="nofollow" class="icon-map"><p class="icon-bg i8"></p><p class="icon-title">万千口碑</p></a>
+            </div>
+        </div>
+                <div class="footer-index">
+            <div class="w clearfix">
+                <ul class="fl coverage">
+                    <li class="s1">客服热线（8:00-23:00）</li>
+                    <li class="s2">400-009-8666</li>
+                    <li class="s3">美乐乐在全国实体店<span class="red">318</span>家、样板间<span class="red">4</span>家</li>
+                    <li class="s4">
+                        <a href="/expr.html" target="_blank"><i class="i-coord"></i>查看全国实体店</a>
+                    </li>
+                    <li class="s5">
+                        <a href="javascript:;" onclick="$.codeSms(false, {click: '版权'});return false;"><i class="i-mobile"></i>免费发送到手机</a>
+                    </li>
+                </ul>
+                <div class="fr clearfix service">
+                                        <dl>
+                        <dt>关于美乐乐</dt>
+                        <dd>
+                                                         <a href="/article_cat-12/article-5224.html" target="_blank" title="公司简介" rel="nofollow">公司简介</a>                               <a href="/article_cat-12/article-10600.html" target="_blank" title="媒体聚焦" rel="nofollow">媒体聚焦</a>                               <a href="/article_cat-12/article-5225.html" target="_blank" title="体验馆" rel="nofollow">体验馆</a>                               <a href="/article_cat-12/article-830.html" target="_blank" title="诚聘英才" rel="nofollow">诚聘英才</a>                               <a href="/join_us-1.html" target="_blank" title="招商加盟" rel="nofollow">招商加盟</a>                               <a href="/article_cat-12/article-4615.html" target="_blank" title="联系我们" rel="nofollow">联系我们</a>                                    </dd>
+                    </dl>
+                                        <dl>
+                        <dt>新手指南</dt>
+                        <dd>
+                                                         <a href="/article_cat-6/article-5404.html" target="_blank" title="注册新用户" rel="nofollow">注册新用户</a>                               <a href="/article_cat-6/article-9930.html" target="_blank" title="会员级别" rel="nofollow">会员级别</a>                               <a href="/article_cat-6/article-9931.html" target="_blank" title="金币说明" rel="nofollow">金币说明</a>                               <a href="/article_cat-6/article-16736.html" target="_blank" title="乐币说明" rel="nofollow">乐币说明</a>                               <a href="/article_cat-6/article-101.html" target="_blank" title="订购家具流程" rel="nofollow">订购家具流程</a>                               <a href="/article_cat-6/article-5280.html" target="_blank" title="体验馆购买指导" rel="nofollow">体验馆购买指导</a>                                  </dd>
+                    </dl>
+                                        <dl>
+                        <dt>配送安装</dt>
+                        <dd>
+                                                         <a href="/article_cat-23/article-5405.html" target="_blank" title="收货指南" rel="nofollow">收货指南</a>                               <a href="/article_cat-23/article-3206.html" target="_blank" title="体验馆服务费" rel="nofollow">体验馆服务费</a>                               <a href="/article_cat-23/article-618.html" target="_blank" title="物流配送" rel="nofollow">物流配送</a>                          </dd>
+                    </dl>
+                                        <dl>
+                        <dt>售后服务</dt>
+                        <dd>
+                                                         <a href="/article_cat-26/article-620.html" target="_blank" title="45天无理由退换货" rel="nofollow">45天无理由退换货</a>                               <a href="/article_cat-26/article-621.html" target="_blank" title="如何申请退款" rel="nofollow">如何申请退款</a>                               <a href="/article_cat-26/article-2838.html" target="_blank" title="维修补件说明" rel="nofollow">维修补件说明</a>                               <a href="/article_cat-26/article-9128.html" target="_blank" title="第三方订单售后服务" rel="nofollow">第三方订单售后服务</a>                               <a href="/article_cat-26/article-1530.html" target="_blank" title="贵就赔" rel="nofollow">贵就赔</a>                          </dd>
+                    </dl>
+                                        <dl>
+                        <dt>购物保障</dt>
+                        <dd>
+                                                         <a href="/article_cat-15/article-2880.html" target="_blank" title="正品保证" rel="nofollow">正品保证</a>                               <a href="/article_cat-15/article-300.html" target="_blank" title="注册协议" rel="nofollow">注册协议</a>                               <a href="/article_cat-15/article-298.html" target="_blank" title="隐私保护" rel="nofollow">隐私保护</a>                               <a href="/article_cat-15/article-297.html" target="_blank" title="免责声明" rel="nofollow">免责声明</a>                          </dd>
+                    </dl>
+                                        <dl class="fr">
+                        <dt>官方微信</dt>
+                        <dd>
+                            <img src="http://image.meilele.com/images/201611/a93d77eb77de78d8a4af789ee0e1b493.jpg" alt="美乐乐微信公众号" width="96" height="96">
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+            </div>
+
+    <div class="footer-copy">
+        <div class="link-container">
+                                                                        <div class="w" aa="">
+                    <div class="copy-index clearfix" style="padding-top:0">
+                        <div class="fl">
+                            <p>
+                                <a href="http://www.meilele.com/list/" target="_blank" title="家具图片">家具图片</a> | <a href="/article/" target="_blank" title="家居资讯">家居资讯</a> | <a href="/baike/" target="_blank" title="生活百科">生活百科</a> | <a href="/article_cat-1/" target="_blank" title="家私导购">家私导购</a> | <a href="/brand/" target="_blank" title="品牌展厅">品牌展厅</a> | <a href="http://club.meilele.com" target="_blank" title="装修论坛">装修论坛</a> | <a href="http://www.melodyhome.com/" target="_blank" title="furniture store">furniture store</a> | <a href="/article_cat-4/article-656.html" target="_blank" title="客服中心" rel="nofollow">客服中心</a> | <a href="/sitesmap.html" target="_blank" title="网站地图">网站地图</a> | <a href="/links.html" target="_blank" title="友情链接" rel="nofollow">友情链接</a> | <a href="/keywords/" target="_blank" title="更多">更多</a>
+                            </p>
+                            <p>
+                                <span class="yen">© 2005-2016 </span><span id="JS_footer_copyright">美乐乐</span> 版权所有，并保留所有权利。<a href="http://www.miibeian.gov.cn/" target="_blank" class="gray" rel="nofollow">ICP备案证书号：粤ICP备08008334号</a>
+                            </p>
+                        </div>
+                        <div class="fr credit">
+                            <a target="_blank" href="https://search.szfw.org/cert/l/CX20141121005615005700"><span><i class="c1"></i>诚信网站示范企业</span></a>
+                            <a target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=e12042051010018574308175&amp;ct=df"><span><i class="c2"></i>可信网站信用评价</span></a>
+                            <span><i class="c3"></i>经营网站备案信息</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
 	</body>
 </html>
